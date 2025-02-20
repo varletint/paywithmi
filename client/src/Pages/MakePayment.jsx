@@ -7,6 +7,7 @@ export default function MakePayment() {
     amount: "3000",
     fullname: "",
   });
+  const back = "<";
 
   console.log(formData);
   const handleInputChange = (e) => {
@@ -60,15 +61,15 @@ export default function MakePayment() {
       items-center flex-col
       '>
       <div
-        className=' bg-gray-50 w-full  py-12 px-2
+        className=' bg-[#f9f9f9b0] w-full  py-12 px-2
       rounded-[1rem] shadow-md'>
         <div className=' flex  justify-between w-full px-3 items-center b'>
-          <h1 className=' font-semibold text-left w-[8rem]'>
+          <h1 className=' font-semibold text-left w-[8rem] text-[#333]'>
             Payment for 311 Logbook
           </h1>
           <h1
             className='
-         font-bold'>
+         font-bold text-lg '>
             <span className=' line-through decoration-double'>N</span>3,000
           </h1>
         </div>
@@ -85,8 +86,9 @@ export default function MakePayment() {
                 value={formData.matricNo}
                 onChange={handleInputChange}
                 placeholder='Matric no...'
-                className='h-[2.5rem] tracking-wide
-              w-full border-[0.125rem] border-gray-500 rounded-xl px-5'
+                className='h-[2.9rem] tracking-wide
+              w-full border-[0.12rem] border-[#333] rounded-xl px-5'
+                required
               />
             </div>
 
@@ -99,8 +101,9 @@ export default function MakePayment() {
                 value={formData.fullname}
                 onChange={handleInputChange}
                 placeholder='Fullname'
-                className='h-[2.5rem] tracking-wide
-              w-full border-[0.125rem] border-gray-500 rounded-xl px-5'
+                className='h-[2.9rem] tracking-wide
+              w-full border-[0.12rem] border-[#333] rounded-xl px-5'
+                required
               />
             </div>
             <div className='input-div '>
@@ -112,16 +115,25 @@ export default function MakePayment() {
                 value={formData.email}
                 onChange={handleInputChange}
                 placeholder='Email...'
-                className='h-[2.5rem] tracking-wide
-              w-full border-[0.125rem] border-gray-500 rounded-xl px-5'
+                className='h-[2.9rem] tracking-wide
+              w-full border-[0.12rem] border-[#333] rounded-xl px-5'
+                required
               />
             </div>
             <h4>
-              <button
-                className='w-full bg-[#333] text-white font-semibold
-            py-2 rounded-xl outline-none border-none'>
-                Pay
-              </button>
+              <div className='button-section flex justify-between gap-10'>
+                <button
+                  className='w-[10rem] border-[0.12rem] border-[#333] text-[#333] font-semibold
+            py-2 rounded-xl '>
+                  Back
+                </button>
+                <button
+                  className='w-full bg-[#333] text-white font-semibold
+            py-2 rounded-xl outline-none border-none hover:bg-[#229]
+            transition-all duration-700'>
+                  Pay
+                </button>
+              </div>
             </h4>
           </div>
         </form>
