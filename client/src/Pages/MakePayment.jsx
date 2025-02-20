@@ -2,8 +2,10 @@ import { useState } from "react";
 
 export default function MakePayment() {
   const [formData, setFormData] = useState({
+    matricNo: "",
     email: "",
-    amount: "",
+    amount: "3000",
+    fullname: "",
   });
 
   console.log(formData);
@@ -29,6 +31,8 @@ export default function MakePayment() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
+            matricNo: formData.matricNo,
+            fullname: formData.fullname,
             email: formData.email,
             amount: parseFloat(formData.amount) * 100, // Convert to kobo/cents
           }),
@@ -41,7 +45,7 @@ export default function MakePayment() {
         // Redirect to Paystack checkout page
         window.location.href = data.data.authorization_url;
       } else {
-        setError("Payment initialization failed. Please try again.");
+        // setError("Payment initialization failed. Please try again.");
       }
     } catch (err) {
       // setError("An error occurred. Please try again later.");
@@ -50,38 +54,78 @@ export default function MakePayment() {
   };
 
   return (
-    <>
-      <div>
-        <h1>Make your Payment here</h1>
-        <h5>Payment Description</h5>
-      </div>
-      <form onSubmit={handelSubmit}>
-        <div>
-          <div className='input-div'>
-            <label htmlFor='matricNo'>Matric No:</label>
-            <input
-              id='email'
-              name='email'
-              type='email'
-              value={formData.email}
-              onChange={handleInputChange}
-            />
-          </div>
-          <div className='input-div'>
-            <label htmlFor='Amount'>Amount:</label>
-            <input
-              type='number'
-              id='amount'
-              name='amount'
-              value={formData.amount}
-              onChange={handleInputChange}
-            />
-          </div>
-          <h4>
-            <button>Submit</button>
-          </h4>
+    <div
+      className=' sm:max-w-[20rem]  max-w-[22rem] min-h-[90vh] 
+      m-auto flex  justify-center
+      items-center flex-col
+      '>
+      <div
+        className=' bg-gray-50 w-full  py-12 px-2
+      rounded-[1rem] shadow-md'>
+        <div className=' flex  justify-between w-full px-3 items-center b'>
+          <h1 className=' font-semibold text-left w-[8rem]'>
+            Payment for 311 Logbook
+          </h1>
+          <h1
+            className='
+         font-bold'>
+            <span className=' line-through decoration-double'>N</span>3,000
+          </h1>
         </div>
-      </form>
-    </>
+        <form onSubmit={handelSubmit} className='mt-5 w-full '>
+          <div
+            className='flex flex-col gap-5 max-w-  
+        m-auto'>
+            <div className='input-div '>
+              {/* <label htmlFor='matricNo'>Matric No:</label> */}
+              <input
+                id='matricNo'
+                name='matricNo'
+                type='text'
+                value={formData.matricNo}
+                onChange={handleInputChange}
+                placeholder='Matric no...'
+                className='h-[2.5rem] tracking-wide
+              w-full border-[0.125rem] border-gray-500 rounded-xl px-5'
+              />
+            </div>
+
+            <div className='input-div'>
+              {/* <label htmlFor='Amount'>Amount:</label> */}
+              <input
+                type='text'
+                id='fullname'
+                name='fullname'
+                value={formData.fullname}
+                onChange={handleInputChange}
+                placeholder='Fullname'
+                className='h-[2.5rem] tracking-wide
+              w-full border-[0.125rem] border-gray-500 rounded-xl px-5'
+              />
+            </div>
+            <div className='input-div '>
+              {/* <label htmlFor='matricNo'>Matric No:</label> */}
+              <input
+                id='email'
+                name='email'
+                type='email'
+                value={formData.email}
+                onChange={handleInputChange}
+                placeholder='Email...'
+                className='h-[2.5rem] tracking-wide
+              w-full border-[0.125rem] border-gray-500 rounded-xl px-5'
+              />
+            </div>
+            <h4>
+              <button
+                className='w-full bg-[#333] text-white font-semibold
+            py-2 rounded-xl outline-none border-none'>
+                Pay
+              </button>
+            </h4>
+          </div>
+        </form>
+      </div>
+    </div>
   );
 }
