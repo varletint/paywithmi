@@ -1,13 +1,16 @@
 {
   "name": "client",
   "private": true,
+  "homepage": "https://varletint.github.io/deptC-payment",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": " gh-pages -d dist"
   },
   "dependencies": {
     "https": "^1.0.0",
