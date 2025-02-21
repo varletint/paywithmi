@@ -8,7 +8,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<MakePayment />} />
+          <Route path='/deptC-payment' element={<MakePayment />} />
         </Routes>
       </BrowserRouter>
     </>
