@@ -70,7 +70,7 @@ export default function MakePayment() {
           <h1
             className='
          font-bold text-lg '>
-            <span className=' line-through decoration-double'>N</span>3,000
+            <span className=' line-through decoration-double'>N</span>2,200
           </h1>
         </div>
         <form onSubmit={handelSubmit} className='mt-5 w-full '>
