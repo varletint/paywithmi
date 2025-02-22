@@ -61,7 +61,7 @@ export default function MakePayment({ onClose }) {
       items-center flex-col
       '>
       <div
-        className=' bg-[#f9f9f9b0] w-full  py-12 px-4
+        className=' bg-[#f9f9f9b0] w-full  py-12 px-4cd
       rounded-[1rem] shadow-md'>
         <div className=' flex  justify-between w-full px-3 items-center b'>
           <h1 className=' font-semibold text-left w-[8rem] text-[#333]'>
