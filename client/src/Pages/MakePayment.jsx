@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function MakePayment() {
+export default function MakePayment({ onClose }) {
   const [formData, setFormData] = useState({
     matricNo: "",
     email: "",
@@ -61,7 +61,7 @@ export default function MakePayment() {
       items-center flex-col
       '>
       <div
-        className=' bg-[#f9f9f9b0] w-full  py-12 px-2
+        className=' bg-[#f9f9f9b0] w-full  py-12 px-4
       rounded-[1rem] shadow-md'>
         <div className=' flex  justify-between w-full px-3 items-center b'>
           <h1 className=' font-semibold text-left w-[8rem] text-[#333]'>
@@ -76,7 +76,7 @@ export default function MakePayment() {
         <form onSubmit={handelSubmit} className='mt-5 w-full '>
           <div
             className='flex flex-col gap-5 max-w-  
-        m-auto'>
+        m-auto '>
             <div className='input-div '>
               {/* <label htmlFor='matricNo'>Matric No:</label> */}
               <input
@@ -122,11 +122,12 @@ export default function MakePayment() {
             </div>
             <h4>
               <div className='button-section flex justify-between gap-10'>
-                <button
-                  className='w-[10rem] border-[0.12rem] border-[#333] text-[#333] font-semibold
-            py-2 rounded-xl '>
+                <span
+                  onClick={onClose}
+                  className='w-[10rem]  border-[0.12rem] border-[#333] text-[#333] font-semibold
+            py-2 rounded-xl text-center cursor-pointer'>
                   Back
-                </button>
+                </span>
                 <button
                   className='w-full bg-[#333] text-white font-semibold
             py-2 rounded-xl outline-none border-none hover:bg-[#229]
