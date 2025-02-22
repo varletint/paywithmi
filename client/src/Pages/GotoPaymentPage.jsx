@@ -29,7 +29,7 @@ export default function GotoPaymentPage() {
               onClick={() => {
                 isActive("active");
               }}
-              className=' bg-[#333] px-16 py-2 text-white
+              className=' bg-[#333] px-16 py-4 text-white
         font-semibold rounded-lg outline-none border-none cursor-default'>
               Make your Payment
             </span>
