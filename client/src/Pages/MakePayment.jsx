@@ -4,7 +4,7 @@ export default function MakePayment({ onClose }) {
   const [formData, setFormData] = useState({
     matricNo: "",
     email: "",
-    amount: "3000",
+    amount: "2200",
     fullname: "",
   });
   const back = "<";
@@ -69,8 +69,9 @@ export default function MakePayment({ onClose }) {
           </h1>
           <h1
             className='
-         font-bold text-lg '>
-            <span className=' line-through decoration-double'>N</span>2,200
+         font-bold text-sm text-[#35c93c]'>
+            <span className='  '>NGN </span>
+            {formData.amount}
           </h1>
         </div>
         <form onSubmit={handelSubmit} className='mt-5 w-full '>
