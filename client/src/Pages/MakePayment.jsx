@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function MakePayment({ onClose }) {
   const [formData, setFormData] = useState({
-    matricNo: "",
+    // matricNo: "",
     email: "",
     amount: "2200",
     fullname: "",
@@ -32,9 +32,9 @@ export default function MakePayment({ onClose }) {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            matricNo: formData.matricNo,
+            // matricNo: formData.matricNo,
             fullname: formData.fullname,
-            email: formData.email,
+            email: formData.email + "@gmail.com",
             amount: parseFloat(formData.amount) * 100, // Convert to kobo/cents
           }),
         }
@@ -78,8 +78,8 @@ export default function MakePayment({ onClose }) {
           <div
             className='flex flex-col gap-5 max-w-  
         m-auto '>
-            <div className='input-div '>
-              {/* <label htmlFor='matricNo'>Matric No:</label> */}
+            {/* <div className='input-div '>
+               <label htmlFor='matricNo'>Matric No:</label> 
               <input
                 id='matricNo'
                 name='matricNo'
@@ -91,8 +91,22 @@ export default function MakePayment({ onClose }) {
               w-full border-[0.12rem] border-[#333] rounded-xl px-5'
                 required
               />
+          </div> 
+            */}
+            <div className='input-div '>
+              {/* <label htmlFor='matricNo'>Matric No:</label> */}
+              <input
+                id='email'
+                name='email'
+                type='text'
+                value={formData.email}
+                onChange={handleInputChange}
+                placeholder='Matric No:'
+                className='h-[2.9rem] tracking-wide
+              w-full border-[0.12rem] border-[#333] rounded-xl px-5'
+                required
+              />
             </div>
-
             <div className='input-div'>
               {/* <label htmlFor='Amount'>Amount:</label> */}
               <input
@@ -102,20 +116,6 @@ export default function MakePayment({ onClose }) {
                 value={formData.fullname}
                 onChange={handleInputChange}
                 placeholder='Fullname'
-                className='h-[2.9rem] tracking-wide
-              w-full border-[0.12rem] border-[#333] rounded-xl px-5'
-                required
-              />
-            </div>
-            <div className='input-div '>
-              {/* <label htmlFor='matricNo'>Matric No:</label> */}
-              <input
-                id='email'
-                name='email'
-                type='email'
-                value={formData.email}
-                onChange={handleInputChange}
-                placeholder='Email...'
                 className='h-[2.9rem] tracking-wide
               w-full border-[0.12rem] border-[#333] rounded-xl px-5'
                 required

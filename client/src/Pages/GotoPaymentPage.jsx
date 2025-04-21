@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import PaymentModal from "../compponents/PaymentModal";
 import MakePayment from "./MakePayment";
+import Header from "../compponents/Header";
 
 export default function GotoPaymentPage() {
   const [showModal, setShowModal] = useState(false);
@@ -8,6 +9,12 @@ export default function GotoPaymentPage() {
 
   return (
     <>
+      <div className='header '>
+        <Header
+          classname='lg:w-[100%] md:w-[100%] sm:w-[22rem] mx-auto 
+          px-3 py-4 text-center items-center font-semibold text-2xl'
+        />
+      </div>
       <div className={`popup ${active}`}>
         <MakePayment onClose={() => isActive("")} />
       </div>
