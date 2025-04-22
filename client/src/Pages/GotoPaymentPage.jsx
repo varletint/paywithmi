@@ -2,6 +2,7 @@ import { React, useState } from "react";
 import PaymentModal from "../compponents/PaymentModal";
 import MakePayment from "./MakePayment";
 import Header from "../compponents/Header";
+import TypesOfPayment from "./TypesOfPayment";
 
 export default function GotoPaymentPage() {
   const [showModal, setShowModal] = useState(false);
@@ -16,7 +17,8 @@ export default function GotoPaymentPage() {
         />
       </div>
       <div className={`popup ${active}`}>
-        <MakePayment onClose={() => isActive("")} />
+        {/* <MakePayment onClose={ () => isActive( "" ) } /> */}
+        <TypesOfPayment onClose={() => isActive("")} />
       </div>
       {/* <PaymentModal open={showModal} onClose={() => setShowModal(false)}>
         <div className=''>

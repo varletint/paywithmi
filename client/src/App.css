@@ -16,7 +16,7 @@ body {
 }
 
 .popup {
-  position: fixed;
+  position: absolute;
   display: block;
   /* background: #680c25;
    */
