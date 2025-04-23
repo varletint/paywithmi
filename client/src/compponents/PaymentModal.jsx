@@ -11,7 +11,7 @@ export default function PaymentModal({ open, children, onClose }) {
   return ReactDOM.createPortal(
     <div
       className=' z-[100]  modal
-      min-h-screen w-full transition-all  '>
+      min-h-screen w-full transition-all  bg-red-300'>
       {children}
     </div>,
     document.getElementById("portal")

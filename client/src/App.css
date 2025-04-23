@@ -1,5 +1,12 @@
 body {
-  background: #f2f2f2;
+  /* background: #f2f2f2; */
+}
+.pointer {
+  transition: all 0.5s;
+}
+.pointer:hover {
+  cursor: pointer;
+  background: #e2dfdf;
 }
 .modal {
   position: fixed;
@@ -17,9 +24,8 @@ body {
 
 .popup {
   position: absolute;
-  display: block;
-  /* background: #680c25;
-   */
+  display: none;
+  background: #680c25;
   background-color: #ececec;
   min-height: 100vh;
   top: 0;
@@ -31,4 +37,5 @@ body {
 
 .popup.active {
   left: 0;
+  display: block;
 }
