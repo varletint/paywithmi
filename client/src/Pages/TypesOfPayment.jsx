@@ -80,9 +80,9 @@ export default function TypesOfPayment({ onClose }) {
           Field Trips
         </h1>
         <div className='lists flex flex-col gap-3 bg-white p-4 mt-2 rounded-3xl'>
-          <h1 className='alert font-medium text-red-600'>
+          <h1 className='alert text-center font-medium text-red-600'>
             {" "}
-            No payment at the momment :-)
+            No payment at the moment :-)
           </h1>
         </div>
       </div>
