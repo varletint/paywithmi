@@ -4,7 +4,7 @@ import "./App.css";
 import MakePayment from "./Pages/MakePayment";
 import GotoPaymentPage from "./Pages/GotoPaymentPage";
 import TypesOfPayment from "./Pages/TypesOfPayment";
-import CreateItem from "./Pages/createItem";
+import CreateItem from "./Pages/CreateItem";
 
 function App() {
   return (

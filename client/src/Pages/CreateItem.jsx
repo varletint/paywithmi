@@ -1,7 +1,7 @@
 export default function createItem() {
   console.log(2);
   return (
-    <div className={` md:max-w-3xl mx-auto mt-5 bg-white`}>
+    <div className={` md:max-w-xl sm:max-w-[30rem] mx-auto mt-5 bg-white`}>
       <h1 className='title text-center text-2xl font-semibold'>
         Create an Item{" "}
       </h1>
