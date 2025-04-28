@@ -29,7 +29,7 @@ export default function createItem() {
             required
           />
         </div>
-        <div className='custom-select'>
+        <div className='category'>
           <label> Category</label>
           <select className='different'>
             <option value=''>Select category</option>
