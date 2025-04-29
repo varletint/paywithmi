@@ -1,7 +1,11 @@
 import express from "express";
-import mongoose from " mongoose";
+import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
+
+// Routes connection
+
+import itemRoutes from "./routes/item.route.js";
 
 const app = express();
 
@@ -25,6 +29,8 @@ mongoose
 app.listen(3000, () => {
   console.log("server running at 3000");
 });
+
+app.use("/api/item", itemRoutes);
 
 // middleware
 
