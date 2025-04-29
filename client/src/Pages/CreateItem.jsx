@@ -63,7 +63,7 @@ export default function createItem() {
         className={` form flex-1   bg-white
         sm:mx-auto sm:max-w-[30rem] lg:flex items-center flex-col lg:justify-center
          lg:w-30rem`}>
-        <h1 className='title text-center mt-5 text-2xl font-semibold'>
+        <h1 className='title text-center mt-6 text-2xl font-semibold'>
           Create an Item
         </h1>
         <form
