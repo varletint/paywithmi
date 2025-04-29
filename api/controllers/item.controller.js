@@ -5,9 +5,10 @@ import Item from "../models/item.modal.js";
 export const createItem = async (req, res, next) => {
   const priceTag = req.body.priceTag;
   const itemName = req.body.itemName;
+  const category = req.body.category;
 
-  if (!itemName || !priceTag) {
-    next(errorHandler(400, "All field are required"));
+  if (!itemName || !priceTag || !category) {
+    next(errorHandler(400, "All field are required ba"));
   }
 
   const tempSlug = req.body.itemName + req.body.priceTag;
@@ -21,7 +22,7 @@ export const createItem = async (req, res, next) => {
   const newItem = new Item({
     ...req.body,
     slug: validSlug,
-    userId: req.user.id,
+    userId: "001",
   });
 
   try {

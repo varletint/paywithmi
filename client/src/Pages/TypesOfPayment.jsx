@@ -1,6 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export default function TypesOfPayment({ onClose }) {
+  const api = "/api/item/getitems";
+
+  const [item, setItems] = useState([]);
+  console.log(item);
+
+  useEffect(() => {
+    const fetchItem = async () => {
+      try {
+        const res = await fetch(`${api}`);
+        const data = await res.json();
+
+        if (!res.ok) {
+          return;
+        }
+        if (res.ok) {
+          setItems(data.items);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchItem();
+  }, []);
   return (
     <div
       className=' mt-10 px-3 min-h-screen max-w-3xl mx-auto flex flex-col gap-10'

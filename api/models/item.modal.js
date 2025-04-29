@@ -2,10 +2,10 @@ import mongoose from "mongoose";
 
 const itemSchema = new mongoose.Schema(
   {
-    userId: {
+    /*userId: {
       type: String,
       required: true,
-    },
+     },*/
     priceTag: {
       type: Number,
       required: true,
