@@ -37,7 +37,7 @@ export const getItems = async (req, res, next) => {
   try {
     const page = isNaN(parseInt(req.query.page)) ? 1 : parseInt(req.query.page);
     const limit = isNaN(parseInt(req.query.limit))
-      ? 9
+      ? 5
       : parseInt(req.query.limit);
     const startIndex = (page - 1) * limit;
     const sortDirection = req.query.order === "asc" ? 1 : -1;

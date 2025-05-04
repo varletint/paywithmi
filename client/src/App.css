@@ -70,3 +70,7 @@ option {
 
 @media (min-width: 1200px) {
 }
+
+.title {
+  font-size: 1.3rem;
+}

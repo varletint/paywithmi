@@ -5,6 +5,7 @@ import MakePayment from "./Pages/MakePayment";
 import GotoPaymentPage from "./Pages/GotoPaymentPage";
 import TypesOfPayment from "./Pages/TypesOfPayment";
 import CreateItem from "./Pages/CreateItem";
+import SignIn from "./Pages/SignIn";
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
           <Route path='/w' element={<GotoPaymentPage />} />
           <Route path='/deptC-payment' element={<MakePayment />} />
           <Route path='/payment-types' element={<TypesOfPayment />} />
-          <Route path='/' element={<CreateItem />} />
+          <Route path='/createItem' element={<CreateItem />} />
+          <Route path='/' element={<SignIn />} />
         </Routes>
       </BrowserRouter>
     </>

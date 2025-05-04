@@ -1,62 +1,113 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DashSidebar from "../compponents/DashSidebar";
+import { useNavigate } from "react-router-dom";
+import ItemCard from "../compponents/ItemCard";
 
 export default function createItem() {
   const api = "/api/item/create";
   const [formData, setFormData] = useState({});
+  const navigate = useNavigate();
   const [errorMassage, setErrorMessage] = useState(null);
-
   const responsiveCenter = "md:max-w-xl sm:max-w-[30rem] sm:mx-auto";
 
-  console.log(formData);
+  const [items, setItems] = useState([]);
+  const apiCreate = "/api/item/getitems";
+
+  useEffect(() => {
+    const fetchItem = async () => {
+      const res = await fetch(`${apiCreate}`);
+      const data = await res.json();
+
+      setItems([...data.items]);
+    };
+    fetchItem();
+  }, []);
 
   const loadFormData = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   if (!formData.itemName || !formData.priceTag || !formData.category) {
+  //     setErrorMessage("Please fill out the field");
+  //   }
+
+  //   const res = await fetch(`${api}`, {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({
+  //       itemName: formData.itemName,
+  //       priceTag: parseFloat(formData.priceTag),
+  //       category: formData.category,
+  //     }),
+  //   });
+  //   const newData = await res.json();
+
+  //   setItems((oldData) => [...oldData, newData]);
+  // };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!formData.itemName || !formData.priceTag || !formData.category) {
-      setErrorMessage("Please fill out the field");
-    }
+    setErrorMessage(null);
 
     try {
-      const res = await fetch(`${api}`, {
+      const res = await fetch(`${apiCreate}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
           itemName: formData.itemName,
-          priceTag: parseFloat(formData.priceTag),
+          priceTag: formData.priceTag,
           category: formData.category,
         }),
       });
+
       const data = await res.json();
-      if (data.success === false) setErrorMessage(data.message);
       if (!res.ok) {
         setErrorMessage(data.message);
         return;
       }
+      if (data.success === false) {
+        setErrorMessage(data.message);
+      }
       if (res.ok) {
-        setErrorMessage("succesm");
+        setErrorMessage(null);
+        setItems(data.items);
       }
     } catch (error) {
-      setErrorMessage(error);
+      setErrorMessage("Something went wrong");
     }
   };
   return (
     <div className=' min-w-full flex  min-h-screen'>
       <div
-        className=' md:w-[22rem] hidden lg:w-[18rem] bg-red-500
-       flex-shrink md:flex'>
-        <DashSidebar />
+        className='bg-[#ebe9e9e0] flex-shrink md:hidden
+       lg:flex lg:w-[22rem] hidden p-3 border-r-[2px] border-[#dddcdc]'>
+        {/* <DashSidebar /> */}
+        <div className='md:w-full lg:w-full  '>
+          {items && items.length > 0 && (
+            <div className=''>
+              <h1 className='title mt-top py-6 px-4 font-bold mt-10'>
+                My Items
+              </h1>
+              <div className='lis mt-4 flex-col flex gap-5'>
+                {items.map((item) => (
+                  <ItemCard key={item._id} item={item} />
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
       </div>
-      <div
-        className='bg-gray-500 flex-shrink md:hidden
-       lg:flex lg:w-[22rem] hidden '>
+      {/* <div
+        className=' md:w-[20rem] hidden lg:w-[22rem] bg-[#f7f6f6]
+       flex-shrink md:flex p-3 border-r-[2px]'>
         <DashSidebar />
-      </div>
+      </div> */}
 
       {/* flex 3 */}
       <div
