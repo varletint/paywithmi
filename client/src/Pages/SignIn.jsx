@@ -60,15 +60,15 @@ export default function SignIn() {
             />
           </div>
           <button
-            className=' bg-[#333] p-3 text-white font-semibold
+            className=' bg-[#333] p-[10px] text-white font-semibold
           rounded-lg mt-4 shadow-md transition-all  -700 hover:bg-[#222]'>
             Sign In
           </button>
 
           <div className='w-full flex justify-center gap-5 font-semibold'>
             <p>Don't have an account?</p>
-            <Link to='/sign-up curs'>
-              <p className=' text-blue-700'>Sign Up</p>
+            <Link to='/sign-up' className='text-blue-700 cursor-pointer'>
+              Sign Up
             </Link>
           </div>
         </form>

@@ -24,17 +24,22 @@ export default function DashSidebar() {
     fetchItem();
   }, []);
   return (
-    <div className='md:w-full lg:w-full  '>
-      {items && items.length > 0 && (
-        <div className=''>
-          <h1 className='title mt-top py-6 px-4 font-bold mt-10'> My Items</h1>
-          <div className='lis mt-4 flex-col flex gap-5'>
-            {items.map((item) => (
+    <div className='md:w-full  '>
+      {/* {items && items.length > 0 && ( */}
+      <div className='md:border-b-2 p-4 border-white '>
+        <h1 className=' text-xl font-bold mt-2'> Dashboard</h1>
+        <h1 className=' text-xl px-2 font-bold mt-2'> Overview</h1>
+        <h1 className=' text-l px-4 mt-top font-bold mt-5'> Items Category</h1>
+        <div className='py-1 px-6 flex-col flex gap-'>
+          {/* {items.map((item) => (
               <ItemCard key={item._id} item={item} />
-            ))}
-          </div>
+            ))} */}
+          <div className=' font-semibold'>Books and Manuals</div>
+          <div className='font-semibold'>Dept. Fees</div>
+          <div className='font-semibold'>Field Trip</div>
         </div>
-      )}
+      </div>
+      {/* )} */}
     </div>
   );
 }
