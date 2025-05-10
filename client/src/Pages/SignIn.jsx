@@ -63,7 +63,7 @@ export default function SignIn() {
          h-full flex-col mx-auto
        '>
         <div className=''>
-          <h3 className='text-center sm:text-3xl mb-5 text-2xl font-bold'>
+          <h3 className='text-center sm:text-3xl mb-[1.25rem] text-2xl font-bold'>
             Login Page
           </h3>
         </div>
