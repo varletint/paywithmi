@@ -17,6 +17,8 @@ export default function SignIn() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  document.title = "Login page";
+
   console.log(formData);
 
   const handleChange = (e) => {
