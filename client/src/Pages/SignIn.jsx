@@ -1,15 +1,61 @@
 import React, { useState } from "react";
 import { FaLock } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { HiOutlineLockClosed, HiOutlineMail } from "react-icons/hi";
+
+import { useDispatch, useSelector } from "react-redux";
+import {
+  signInFailure,
+  signInSuccess,
+  signInStart,
+} from "../redux/user/userSlice";
 
 export default function SignIn() {
   const [formData, setFormData] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+  const { error: errorMessage } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   console.log(formData);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!formData.email || !formData.password) {
+      return dispatch(signInFailure("Fields cannot be empty"));
+    }
+
+    try {
+      setIsLoading(true);
+      dispatch(signInStart());
+
+      const res = await fetch(`/api/auth/signin`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+
+      if (data.success === false) {
+        setIsLoading(false);
+        return dispatch(signInFailure(data.message));
+      }
+      if (res.ok) {
+        setIsLoading(false);
+        dispatch(signInSuccess(data));
+        navigate(`/dashboard`);
+      }
+    } catch (error) {
+      dispatch(signInFailure(error.message));
+    }
+  };
+
   return (
     <div className='h-[100vh]'>
       <div
@@ -22,7 +68,9 @@ export default function SignIn() {
           </h3>
         </div>
         <div className=''>
-          <form className='flex flex-col gap-2 p-2 px-3 sm:px-[3rem]'>
+          <form
+            onSubmit={handleSubmit}
+            className='flex flex-col gap-2 p-2 px-3 sm:px-[3rem]'>
             <div className=''>
               <label className=' font-semibold text-[#687a72]'>Email</label>
               <div
@@ -65,10 +113,20 @@ export default function SignIn() {
 
             <button
               className='bg-[#0d9488] p-2.5 mt-6 
-            text-white rounded-lg font-medium shadow'>
-              Login
+            text-white rounded-lg font-medium shadow'
+              type='submit'
+              disabled={isLoading}>
+              {isLoading ? <span>Loading</span> : "  Login"}
             </button>
           </form>
+          {errorMessage && (
+            <p
+              className='mt-2 text-center p-3 
+              text-red-600 font-medium text-sm
+              '>
+              {errorMessage}
+            </p>
+          )}
         </div>
       </div>
     </div>
