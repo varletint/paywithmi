@@ -8,7 +8,7 @@ export default function Dashboard() {
     document.title = "dashboard";
   }, []);
   return (
-    <div className='bg-white rounded-lg pb-4 shadow h-[200vh]'>
+    <div className='bg-white rounded-lg pb-4 shadow '>
       <TopBar />
       <Grid />
     </div>
