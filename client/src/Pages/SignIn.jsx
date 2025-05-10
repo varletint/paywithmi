@@ -1,77 +1,75 @@
 import React, { useState } from "react";
+import { FaLock } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { HiOutlineLockClosed, HiOutlineMail } from "react-icons/hi";
 
 export default function SignIn() {
   const [formData, setFormData] = useState({});
+  console.log(formData);
 
-  const loadFormData = (e) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
-  };
-
-  // Handle submit function
-  const handleSubmit = async (e) => {
-    e.preventDafault;
-
-    const res = fetch("api", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
   };
   return (
-    <div className=' min-h-screen max-w-3xl mx-auto'>
-      {/* ADMIN */}
-
-      <div className=' mt-10'>
-        <h1 className=' text-center  text-xl font-bold'>Pay with Me</h1>
-        <h1 className='text-center mt-1 font-semibold text-lg'>
-          Enter your login details to Sign In
-        </h1>
-      </div>
+    <div className='h-[100vh]'>
       <div
-        className='w-full flex
-      justify-center mt-5 '>
-        <form
-          onSubmit={handleSubmit}
-          className=' bg-[#fafafae8] py-5 flex flex-col w-[30rem] 
-        p-3 gap-5 rounded-2xl shadow '>
-          <div className='input flex flex-col gap-2  '>
-            <label> Email</label>
-            <input
-              className='bg-white shadow'
-              type='email'
-              name='email'
-              id='email'
-              placeholder='Enter your email'
-              onChange={loadFormData}
-            />
-          </div>
-          <div className='input flex flex-col gap-3'>
-            <label> Password</label>
-            <input
-              className='bg-white shadow'
-              type='text'
-              name='password'
-              id='password'
-              placeholder='Enter your password'
-              onChange={loadFormData}
-            />
-          </div>
-          <button
-            className=' bg-[#333] p-[10px] text-white font-semibold
-          rounded-lg mt-4 shadow-md transition-all  -700 hover:bg-[#222]'>
-            Sign In
-          </button>
+        className='flex max-w-[36rem] justify-center
+         h-full flex-col mx-auto
+       '>
+        <div className=''>
+          <h3 className='text-center sm:text-3xl mb-5 text-2xl font-bold'>
+            Login Page
+          </h3>
+        </div>
+        <div className=''>
+          <form className='flex flex-col gap-2 p-2 px-3 sm:px-[3rem]'>
+            <div className=''>
+              <label className=' font-semibold text-[#687a72]'>Email</label>
+              <div
+                className=' w-full mt-1.5 bg-[#ddebe0] flex 
+              gap-3 items-center p-2 py-3  shadow rounded-lg'>
+                <HiOutlineMail size={23} className=' text-[#a1998a]' />
+                <input
+                  type='email '
+                  id='email'
+                  className='w-full text-[#a1998a] border-none bg-transparent 
+            placeholder:text-[#a1998a] placeholder:font-medium
+          focus:outline-none'
+                  placeholder='Email'
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+            <div className=''>
+              <label className=' font-semibold text-[#687a72]'>Password</label>
+              <div
+                className=' w-full mt-1.5 bg-[#ddebe0] flex 
+              gap-3 items-center p-2 py-3  shadow rounded-lg'>
+                <HiOutlineLockClosed
+                  size={23}
+                  className=' 
+                text-[#8aa197]'
+                />
+                <input
+                  type='text '
+                  className='w-full border-none bg-transparent
+                  text-[#a1998a] 
+            placeholder:text-[#a1998a] placeholder:font-medium
+          focus:outline-none'
+                  placeholder='Password'
+                  id='password'
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
 
-          <div className='w-full flex justify-center gap-5 font-semibold'>
-            <p>Don't have an account?</p>
-            <Link to='/sign-up' className='text-blue-700 cursor-pointer'>
-              Sign Up
-            </Link>
-          </div>
-        </form>
+            <button
+              className='bg-[#0d9488] p-2.5 mt-6 
+            text-white rounded-lg font-medium shadow'>
+              Login
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

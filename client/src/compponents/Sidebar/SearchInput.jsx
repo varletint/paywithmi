@@ -5,7 +5,7 @@ export default function SearchInput() {
       <div
         className='bg-[#ddebe0] mb-4 relative 
       rounded px-2 py-1.5 text-sm'>
-        <div className='flex px-2 items-center text-[#8aa197]'>
+        <div className='flex gap-1.5 px-2 items-center text-[#8aa197]'>
           <FaSearch />
           <input
             type='text'

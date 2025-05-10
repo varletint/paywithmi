@@ -15,7 +15,7 @@ export default function TopBar() {
             Active
           </span>
         </div>
-        <div className='sm:mt-0 mt-2 flex gap-1.5'>
+        <div className='sm:mt-0 mt-2 flex gap-[0.37rem]'>
           <FaExclamationTriangle className=' text-red-500' />
           <span
             className='text-xs  
