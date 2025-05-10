@@ -8,6 +8,7 @@ import CreateItem from "./Pages/CreateItem";
 import SignIn from "./Pages/SignIn";
 import AdminPrivate from "./compponents/AdminPrivate";
 import Page from "./Pages/Page";
+import CreateAccount from "./Pages/CreateAccount";
 
 function App() {
   return (
@@ -17,12 +18,12 @@ function App() {
           <Route path='/' element={<GotoPaymentPage />} />
           <Route path='/deptC-payment' element={<MakePayment />} />
           <Route path='/payment-types' element={<TypesOfPayment />} />
-          <Route path='/sign-in' element={<SignIn />} />
-
-          <Route path='/dashboard' element={<Page />} />
+          <Route path='/login' element={<SignIn />} />
+          <Route path='/register' element={<CreateAccount />} />
 
           {/* Private Routes */}
           <Route element={<AdminPrivate />}>
+            <Route path='/dashboard' element={<Page />} />
             <Route path='/create-item' element={<CreateItem />} />
           </Route>
         </Routes>
