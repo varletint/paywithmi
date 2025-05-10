@@ -4,8 +4,8 @@ export default function StatGrid() {
   return (
     <>
       <Card title={"Total Balance"} value={"124,000"} period={"This Month"} />
-      <Card period={"Last Month"} />
-      <Card />
+      <Card period={"Last Month"} value={"278,000"} />
+      <Card title={"coming soon"} />
     </>
   );
 }

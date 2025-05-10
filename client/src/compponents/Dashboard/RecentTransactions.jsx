@@ -15,7 +15,7 @@ export default function RecentTransactions() {
           Recent Transactions
         </h3>
         <button
-          className='text-sm text-violet-500
+          className='text-sm text-green-500
               hover:underline font-medium'>
           See all
         </button>
@@ -25,10 +25,24 @@ export default function RecentTransactions() {
         <tbody>
           <TableRow
             matric={"u20/fns/csc/1110"}
-            item={"Manual 103"}
+            item={"Manual 403"}
             category={"Manuals and Books"}
             amount={1200}
-            // date={date}
+            date={"12/06/2025"}
+          />
+          <TableRow
+            matric={"u23/fns/csc/0210"}
+            item={"Manual 103"}
+            category={"Manuals and Books"}
+            amount={2200}
+            date={"10/06/2025"}
+          />
+          <TableRow
+            matric={"u20/fns/csc/0249"}
+            item={"Dept. fee"}
+            category={"Departmental fee"}
+            amount={1300}
+            date={"21/05/2025"}
           />
         </tbody>
       </table>
@@ -53,12 +67,16 @@ const TableHead = () => {
 
 const TableRow = ({ matric, category, date, amount, item }) => {
   return (
-    <tr className='text-sm font-medium'>
+    <tr className='text-[0.73rem] font-medium text-stone-700'>
       <td className='p-1.5 uppercase'>{matric}</td>
-      <td className='p-1.5 uppercase'>{item}</td>
+      <td className='p-1.5 capitalize'>{item}</td>
       <td className='p-1.5 capitalize'>{category}</td>
       <td className='p-1.5'>{date}</td>
-      <td className='p-1.5'>{amount}</td>
+      <td className='p-1.5'>
+        {" "}
+        <span className='line-through'>N</span>
+        {amount}
+      </td>
     </tr>
   );
 };

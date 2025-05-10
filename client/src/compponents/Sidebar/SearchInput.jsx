@@ -1,17 +1,22 @@
+import { FaSearch } from "react-icons/fa";
 export default function SearchInput() {
   return (
     <>
       <div
         className='bg-[#ddebe0] mb-4 relative 
       rounded px-2 py-1.5 text-sm'>
-        <input
-          type='text'
-          name='search'
-          placeholder='Search me'
-          className='w-full border-none bg-transparent placeholder:text-[#8aa197]
+        <div className='flex px-2 items-center text-[#8aa197]'>
+          <FaSearch />
+          <input
+            type='text'
+            name='search'
+            placeholder='Search'
+            className='w-full border-none bg-transparent 
+            placeholder:text-[#8aa197]
           focus:outline-none'
-          id='search'
-        />
+            id='search'
+          />
+        </div>
       </div>
     </>
   );

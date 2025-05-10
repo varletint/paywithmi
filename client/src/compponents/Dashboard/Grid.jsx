@@ -1,6 +1,7 @@
 import React from "react";
 import StatGrid from "./StatGrid";
 import RecentTransactions from "./RecentTransactions";
+import AvailableItems from "./AvailableItems";
 
 export default function Grid() {
   return (
@@ -8,9 +9,9 @@ export default function Grid() {
       <div className=' sm:grid-cols-1 grid gap-3 lg:grid-cols-12'>
         <StatGrid />
       </div>
-      <div className=''>
-        <RecentTransactions />
-      </div>
+
+      <RecentTransactions />
+      <AvailableItems />
     </div>
   );
 }
