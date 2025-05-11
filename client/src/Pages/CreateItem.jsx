@@ -12,6 +12,7 @@ export default function createItem() {
 
   const [items, setItems] = useState([]);
   const apiCreate = "/api/item/getitems";
+  document.title = "Create item";
 
   useEffect(() => {
     const fetchItem = async () => {

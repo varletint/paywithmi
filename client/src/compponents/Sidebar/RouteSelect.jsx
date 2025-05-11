@@ -12,6 +12,7 @@ import {
   HiOutlineViewBoards,
   HiViewBoards,
 } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 export default function RouteSelect() {
   return (
@@ -20,7 +21,9 @@ export default function RouteSelect() {
       <Route Icon={<FaList />} title='Category' />
       <Route Icon={<FaReceipt />} title='Payments' />
       <Route Icon={<FaCashRegister />} title='Transactions' />
-      <Route Icon={<FaPlus />} title='Add Transactions' />
+      <Link to={"/create-item"}>
+        <Route Icon={<FaPlus />} title='Add Transactions' />
+      </Link>
     </div>
   );
 }

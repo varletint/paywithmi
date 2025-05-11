@@ -22,10 +22,9 @@ function App() {
           <Route path='/register' element={<CreateAccount />} />
 
           {/* Private Routes */}
-          <Route element={<AdminPrivate />}>
-            <Route path='/dashboard' element={<Page />} />
-            <Route path='/create-item' element={<CreateItem />} />
-          </Route>
+          <Route element={<AdminPrivate />}></Route>
+          <Route path='/dashboard' element={<Page />} />
+          <Route path='/create-item' element={<CreateItem />} />
         </Routes>
       </BrowserRouter>
     </>
