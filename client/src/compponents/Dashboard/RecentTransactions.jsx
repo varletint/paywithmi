@@ -6,8 +6,7 @@ export default function RecentTransactions() {
   return (
     <div
       className='grid-cols-1 p-4 border 
-  shadow-sm rounded-xl lg:overflow-hidden overflow-x-scroll scrollbar
-        scrollbar-track-slate-100 scrollbar-thumb-slate-300 '>
+  shadow-sm rounded-xl  '>
       <div className='mb-4 flex items-center justify-between'>
         <h3
           className='flex items-center gap-1.5
@@ -20,7 +19,9 @@ export default function RecentTransactions() {
           See all
         </button>
       </div>
-      <table className=' w-full table-auto'>
+      <table
+        className=' w-full table-auto lg:overflow-hidden overflow-x-scroll scrollbar
+        scrollbar-track-slate-100 scrollbar-thumb-slate-300'>
         <TableHead />
         <tbody>
           <TableRow
@@ -68,13 +69,13 @@ const TableHead = () => {
 const TableRow = ({ matric, category, date, amount, item }) => {
   return (
     <tr className='text-[0.73rem] font-medium text-stone-700'>
-      <td className='p-1.5 uppercase'>{matric}</td>
-      <td className='p-1.5 capitalize'>{item}</td>
-      <td className='p-1.5 capitalize'>{category}</td>
-      <td className='p-1.5'>{date}</td>
+      <td className='p-1.5 uppercase whitespace-nowrap'>{matric}</td>
+      <td className='p-1.5 capitalize whitespace-nowrap'>{item}</td>
+      <td className='p-1.5 capitalize whitespace-nowrap'>{category}</td>
+      <td className='p-1.5 whitespace-nowrap'>{date}</td>
       <td className='p-1.5'>
         {" "}
-        <span className='line-through'>N</span>
+        <span className='line-through whitespace-nowrap'>N</span>
         {amount}
       </td>
     </tr>

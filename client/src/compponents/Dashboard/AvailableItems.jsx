@@ -4,7 +4,7 @@ export default function AvailableItems() {
   return (
     <div
       className=' grid-cols-12 border p-4 
-  rounded-xl shadow-sm overflow-x-scroll'>
+  rounded-xl shadow-sm'>
       <div className='flex justify-between items-center mb-4'>
         <h3
           className=' font-semibold flex
@@ -15,7 +15,8 @@ export default function AvailableItems() {
           See all
         </button>
       </div>
-      <table className=' table-auto w-full'>
+      <table className=' table-auto w-full lg:overflow-hidden overflow-x-scroll scrollbar
+        scrollbar-track-slate-100 scrollbar-thumb-slate-300'>
         <TableHead />
         <tbody>
           <TableRow
@@ -43,10 +44,10 @@ const TableHead = ({}) => {
   return (
     <thead>
       <tr className='text-sm font-normal text-stone-500'>
-        <th className='text-start p-1.5 '>{"Items"}</th>
-        <th className='text-start p-1.5 '>{"Category"}</th>
-        <th className='text-start p-1.5 '>{"Price"}</th>
-        <th className='text-start p-1.5 '>{"Date"}</th>
+        <th className='text-start p-1.5 whitespace-nowrap'>{"Items"}</th>
+        <th className='text-start p-1.5 whitespace-nowrap'>{"Category"}</th>
+        <th className='text-start p-1.5 whitespace-nowrap'>{"Price"}</th>
+        <th className='text-start p-1.5 whitespace-nowraps'>{"Date"}</th>
       </tr>
     </thead>
   );
@@ -55,10 +56,10 @@ const TableHead = ({}) => {
 const TableRow = ({ item, price, category }) => {
   return (
     <tr className='text-[0.73rem] font-medium text-stone-700'>
-      <td className='p-1.5'> {item} </td>
-      <td className='p-1.5'> {category} </td>
-      <td className='p-1.5'>
-        <span className='line-through'>N</span>
+      <td className='p-1.5 whitespace-nowrap'> {item} </td>
+      <td className='p-1.5 whitespace-nowrap'> {category} </td>
+      <td className='p-1.5 whitespace-nowrap'>
+        <span className='line-through whitespace-nowrap'>N</span>
         {price}
       </td>
       <td className='p-1.5'> {"Not available at the moment"} </td>
