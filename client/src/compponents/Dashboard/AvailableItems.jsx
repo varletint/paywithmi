@@ -4,7 +4,8 @@ export default function AvailableItems() {
   return (
     <div
       className=' grid-cols-12 border p-4 
-  rounded-xl shadow-sm'>
+  rounded-xl shadow-sm lg:overflow-hidden overflow-x-scroll scrollbar
+        scrollbar-track-slate-100 scrollbar-thumb-slate-300'>
       <div className='flex justify-between items-center mb-4'>
         <h3
           className=' font-semibold flex
@@ -15,8 +16,7 @@ export default function AvailableItems() {
           See all
         </button>
       </div>
-      <table className=' table-auto w-full lg:overflow-hidden overflow-x-scroll scrollbar
-        scrollbar-track-slate-100 scrollbar-thumb-slate-300'>
+      <table className=' table-auto w-full'>
         <TableHead />
         <tbody>
           <TableRow

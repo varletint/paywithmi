@@ -6,7 +6,8 @@ export default function RecentTransactions() {
   return (
     <div
       className='grid-cols-1 p-4 border 
-  shadow-sm rounded-xl  '>
+  shadow-sm rounded-xl lg:overflow-hidden overflow-x-scroll scrollbar
+        scrollbar-track-slate-100 scrollbar-thumb-slate-300 '>
       <div className='mb-4 flex items-center justify-between'>
         <h3
           className='flex items-center gap-1.5
@@ -19,9 +20,7 @@ export default function RecentTransactions() {
           See all
         </button>
       </div>
-      <table
-        className=' w-full table-auto lg:overflow-hidden overflow-x-scroll scrollbar
-        scrollbar-track-slate-100 scrollbar-thumb-slate-300'>
+      <table className=' w-full table-auto'>
         <TableHead />
         <tbody>
           <TableRow
