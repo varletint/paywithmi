@@ -62,7 +62,9 @@ const TableRow = ({ item, price, category }) => {
         <span className='line-through whitespace-nowrap'>N</span>
         {price}
       </td>
-      <td className='p-1.5'> {"Not available at the moment"} </td>
+      <td className='p-1.5 whitespace-nowrap'>
+        {"Not available at the moment"}
+      </td>
     </tr>
   );
 };
