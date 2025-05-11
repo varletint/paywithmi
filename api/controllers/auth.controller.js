@@ -59,7 +59,7 @@ export const signIn = async (req, res, next) => {
         id: validUser._id,
         isAdmin: validPassword.isAdmin,
       },
-      process.env.JWT_SECRET_KEY
+      process.env.JWT_SECRET
     );
     const { password: pass, ...rest } = validUser._doc;
 
