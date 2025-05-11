@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 
 export default function RouteSelect() {
   return (
-    <div className='space-y-1'>
+    <div className='space-y-1 bg-[#f1f7f3] z-[100]'>
       <Route Icon={<HiOutlineViewBoards />} selected={true} title='Dashboard' />
       <Route Icon={<FaList />} title='Category' />
       <Route Icon={<FaReceipt />} title='Payments' />

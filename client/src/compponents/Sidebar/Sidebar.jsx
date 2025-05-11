@@ -10,7 +10,7 @@ export default function Sidebar() {
         className=' overflow-y-scroll sticky top-4 
       lg:h-[calc(100vh-32px-49px)] md:h-[calc(100vh-32px-49px)]
       sm:h-[calc(50vh-32px-49px)]
-       border-b bg-[#f1f7f3]'>
+       border-b '>
         <AccountToggle />
         <SearchInput />
         <RouteSelect />
