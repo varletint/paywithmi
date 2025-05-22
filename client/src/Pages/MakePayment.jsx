@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 export default function MakePayment({ onClose }) {
+  const [paymentDetails, setPaymentDetails] = useState("");
   const [formData, setFormData] = useState({
     // matricNo: "",
     email: "",
@@ -44,6 +45,7 @@ export default function MakePayment({ onClose }) {
 
       if (data.status) {
         // Redirect to Paystack checkout page
+        // setPaymentDetails(data.data.authorization_url);
         window.location.href = data.data.authorization_url;
       } else {
         // setError("Payment initialization failed. Please try again.");

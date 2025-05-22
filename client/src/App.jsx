@@ -9,6 +9,7 @@ import SignIn from "./Pages/SignIn";
 import AdminPrivate from "./compponents/AdminPrivate";
 import Page from "./Pages/Page";
 import CreateAccount from "./Pages/CreateAccount";
+import GeneratePaymentDetails from "./Pages/GeneratePaymentDetails";
 
 function App() {
   return (
@@ -19,12 +20,17 @@ function App() {
           <Route path='/deptC-payment' element={<MakePayment />} />
           <Route path='/payment-types' element={<TypesOfPayment />} />
           <Route path='/login' element={<SignIn />} />
-          <Route path='/register' element={<CreateAccount />} />
+          <Route
+            path='/generate-payment-details'
+            element={<GeneratePaymentDetails />}
+          />
+          {/* <Route path='/register' element={<CreateAccount />} /> */}
 
           {/* Private Routes */}
-          <Route element={<AdminPrivate />}></Route>
-          <Route path='/dashboard' element={<Page />} />
-          <Route path='/create-item' element={<CreateItem />} />
+          <Route element={<AdminPrivate />}>
+            <Route path='/dashboard' element={<Page />} />
+            <Route path='/create-item' element={<CreateItem />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>
