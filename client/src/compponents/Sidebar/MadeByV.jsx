@@ -10,6 +10,7 @@ export default function MadeByV() {
         <div className=''>
           <p className=' font-bold'>varlentint</p>
           <p className='text-xs text-[#8aa197] '>junior web.dev</p>
+          <button>Log out</button>
         </div>
       </div>
     </div>
