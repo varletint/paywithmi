@@ -36,8 +36,8 @@ export default function MakePayment({ onClose }) {
           },
           body: JSON.stringify({
             // matricNo: formData.matricNo,
-            fullname: formData.fullname,
-            itemName,
+            last_name: formData.fullname,
+            first_name: itemName,
             email: formData.email + "@gmail.com",
             amount: parseFloat(formData.amount) * 100, // Convert to kobo/cents
           }),

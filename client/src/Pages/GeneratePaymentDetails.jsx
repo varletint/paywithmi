@@ -21,7 +21,12 @@ function PaymentReceipt({ data }) {
   return (
     <div className='max-w-md mx-auto p-6 border border-gray-300 rounded-lg shadow-lg bg-white text-gray-800 font-sans'>
       <h2 className='text-2xl font-bold text-center mb-4'>Payment Receipt</h2>
-
+      <div className='mb-2'>
+        <strong>Customer Name:</strong> {customer.last_name}
+      </div>
+      <div className='mb-2'>
+        <strong>Product Name:</strong> {customer.first_name}
+      </div>
       <div className='mb-2'>
         <strong>Reference:</strong> {reference}
       </div>
@@ -45,8 +50,12 @@ function PaymentReceipt({ data }) {
         <strong>Gateway Response:</strong> {gateway_response}
       </div>
       <div className='mb-2'>
-        <strong>IP Address:</strong> {customer.email}
+        <strong>Email:</strong> {customer.email}
       </div>
+
+      {/* <div className='mb-2'>
+        <strong>Email:</strong> {customer.email}
+      </div> */}
       {/* <div className='mb-2'>
         <strong>Referrer:</strong>{" "}
         <a
