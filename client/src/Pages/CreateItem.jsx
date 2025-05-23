@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import DashSidebar from "../compponents/DashSidebar";
 import { useNavigate } from "react-router-dom";
 import ItemCard from "../compponents/ItemCard";
+import { useSelector } from "react-redux";
 
 export default function createItem() {
+  const { currentUser } = useSelector((state) => state.user);
   const api = "/api/item/create";
   const [formData, setFormData] = useState({});
   const navigate = useNavigate();

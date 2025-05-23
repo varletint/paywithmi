@@ -2,8 +2,10 @@ import { useState } from "react";
 
 export default function MakePayment({ onClose }) {
   const [paymentDetails, setPaymentDetails] = useState("");
+  const itemName = " Manual 108";
   const [formData, setFormData] = useState({
     // matricNo: "",
+    itemName,
     email: "",
     amount: "2200",
     fullname: "",
@@ -35,6 +37,7 @@ export default function MakePayment({ onClose }) {
           body: JSON.stringify({
             // matricNo: formData.matricNo,
             fullname: formData.fullname,
+            itemName,
             email: formData.email + "@gmail.com",
             amount: parseFloat(formData.amount) * 100, // Convert to kobo/cents
           }),
@@ -67,7 +70,7 @@ export default function MakePayment({ onClose }) {
       rounded-[1rem] shadow-md'>
         <div className=' flex  justify-between w-full px-3 items-center b'>
           <h1 className=' font-semibold text-left w-[8rem] text-[#333]'>
-            Payment for 311 Logbook
+            Payment for {itemName}
           </h1>
           <h1
             className='
