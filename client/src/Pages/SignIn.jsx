@@ -27,7 +27,8 @@ export default function SignIn() {
     dispatch(clearError());
   }, [dispatch]);
 
-  // const isValidEmail =(email)=> {}
+  // const isValidEmail =(email)=> {
+  // }
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
