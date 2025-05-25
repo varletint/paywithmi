@@ -2,13 +2,13 @@ import { useState } from "react";
 
 export default function MakePayment({ onClose }) {
   const [paymentDetails, setPaymentDetails] = useState("");
-  const itemName = " Manual 108";
+  const itemName = "Manual 108";
   const [formData, setFormData] = useState({
     // matricNo: "",
-    itemName,
+    firstname: itemName,
+    lastname: "",
     email: "",
     amount: "2200",
-    fullname: "",
   });
   const back = "<";
 
@@ -36,8 +36,8 @@ export default function MakePayment({ onClose }) {
           },
           body: JSON.stringify({
             // matricNo: formData.matricNo,
-            last_name: formData.fullname,
-            first_name: itemName,
+            firstname: formData.firstname,
+            lastname: formData.lastname,
             email: formData.email + "@gmail.com",
             amount: parseFloat(formData.amount) * 100, // Convert to kobo/cents
           }),
@@ -50,6 +50,7 @@ export default function MakePayment({ onClose }) {
         // Redirect to Paystack checkout page
         // setPaymentDetails(data.data.authorization_url);
         window.location.href = data.data.authorization_url;
+        console.log(data);
       } else {
         // setError("Payment initialization failed. Please try again.");
       }
@@ -116,11 +117,11 @@ export default function MakePayment({ onClose }) {
               {/* <label htmlFor='Amount'>Amount:</label> */}
               <input
                 type='text'
-                id='fullname'
-                name='fullname'
-                value={formData.fullname}
+                id='lastname'
+                name='lastname'
+                value={formData.lastname}
                 onChange={handleInputChange}
-                placeholder='Fullname'
+                placeholder='Full name'
                 className='h-[2.9rem] tracking-wide
               w-full border-[0.12rem] border-[#333] rounded-xl px-5'
                 required

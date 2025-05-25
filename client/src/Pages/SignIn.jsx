@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaLock } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { HiOutlineLockClosed, HiOutlineMail } from "react-icons/hi";
@@ -8,10 +8,12 @@ import {
   signInFailure,
   signInSuccess,
   signInStart,
+  clearError,
 } from "../redux/user/userSlice";
 
 export default function SignIn() {
   const [formData, setFormData] = useState({});
+  // const [email, setEmail] = useState(form);
   const [isLoading, setIsLoading] = useState(false);
   const { error: errorMessage } = useSelector((state) => state.user);
   const dispatch = useDispatch();
@@ -20,6 +22,12 @@ export default function SignIn() {
   document.title = "Login page";
 
   console.log(formData);
+
+  useEffect(() => {
+    dispatch(clearError());
+  }, [dispatch]);
+
+  // const isValidEmail =(email)=> {}
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
@@ -82,6 +90,7 @@ export default function SignIn() {
                 <input
                   type='email '
                   id='email'
+                  value={formData.email}
                   className='w-full text-[#a1998a] border-none bg-transparent 
             placeholder:text-[#a1998a] placeholder:font-medium
           focus:outline-none'
@@ -101,7 +110,7 @@ export default function SignIn() {
                 text-[#8aa197]'
                 />
                 <input
-                  type='text '
+                  type='password'
                   className='w-full border-none bg-transparent
                   text-[#a1998a] 
             placeholder:text-[#a1998a] placeholder:font-medium
