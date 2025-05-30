@@ -7,7 +7,7 @@ export default function GeneratePaymentDetails() {
     <div>
       <ReferenceIdDetails
         reference={`pqwD190c3`}
-        customer={`u17/fns/csc/1990@gmail.com`}
+        customer={`u17/fns/csc/1910@gmail.com`}
         amount={Number("2300")}
         channel={"ATM Card"}
         paid_at={`${date.getDay()}/${date.getMonth()}/${date.getFullYear()}`}
