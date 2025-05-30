@@ -35,7 +35,7 @@ const ReferenceIdDetails = ({
       className=' min-h-screen max-w-3xl 
     flex flex-col justify-between mx-auto py-6'>
       <div
-        className='w-[100%] h-scree border-4 py-2 px-3
+        className='w-[100%] h-scree  py-2 px-3
       flex flex-col text-[#04a737] gap-[3rem]'>
         <div className='top flex flex-col sm:flex-row gap justify-between'>
           <h1 className=' font-bold text-nowrap text-xl'>VT Service</h1>
