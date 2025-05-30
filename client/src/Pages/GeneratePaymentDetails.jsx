@@ -89,7 +89,7 @@ const ReferenceIdDetails = ({
           Click the button below to submit your reference ID
         </p>
         <Button
-          className='bg-[#4a6352] mb-20
+          className='bg-[#4a6352] mb-[6.1rem]
         py-3 font-semibold text-white text-[1.1rem]
         w-[17rem] rounded-xl shadow'
           text={"Submit"}
