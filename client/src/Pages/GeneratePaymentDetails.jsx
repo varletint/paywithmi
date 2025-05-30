@@ -1,10 +1,20 @@
 import React from "react";
 
 export default function GeneratePaymentDetails() {
+  const date = new Date();
+  // console.log(date);
   return (
-    <>
-      <ReferenceIdDetails reference={`pqwD190c3`} />
-    </>
+    <div>
+      <ReferenceIdDetails
+        reference={`pqwD190c3`}
+        customer={`u17/fns/csc/1990@gmail.com`}
+        amount={Number("2300")}
+        channel={"ATM Card"}
+        paid_at={`${date.getDay()}/${date.getMonth()}/${date.getFullYear()}`}
+      />
+
+      {/* <Button text={"Submit your reference ID for Swapping"} /> */}
+    </div>
   );
 }
 
@@ -21,32 +31,76 @@ const ReferenceIdDetails = ({
   customer,
 }) => {
   return (
-    <div className=' min-h-screen max-w-3xl  mx-auto '>
+    <div
+      className=' min-h-screen max-w-3xl 
+    flex flex-col justify-between mx-auto py-6'>
       <div
-        className='w-[100%] h-screen border-4 py-2 px-3
+        className='w-[100%] h-scree border-4 py-2 px-3
       flex flex-col text-[#04a737] gap-[3rem]'>
         <div className='top flex flex-col sm:flex-row gap justify-between'>
           <h1 className=' font-bold text-nowrap text-xl'>VT Service</h1>
 
           <div className='top_details'>
-            <p className='font-semibold text-nowrap text-[0.83rem]'>
+            <p className='font-semibold text-nowrap text-[0.83rem] text-[#4a6352]'>
               Refrence Number:
-              <span className='ml-2 text-red-500 uppercase'>{reference}</span>
+              <span className='ml-2 text-red-500 '>{reference}</span>
             </p>
-            <p className='font-semibold text-nowrap text-[0.83rem]'>
+            <p className='font-semibold text-nowrap text-[0.83rem] text-[#4a6352]'>
               Date:
-              <span className=' ml-2 text-[#024d1a] uppercase'>
-                {"12/03/2025"}
-              </span>
+              <span className=' ml-2 text-[#4a6352] '>{"12/03/2025"}</span>
             </p>
           </div>
         </div>
         <div className='bottom '>
-          <h1 className=' font-bold'>Ticket Details</h1>.
+          <h1 className=' font-bold'>Ticket Details</h1>
+
+          <div className='flex justify-between mt-5'>
+            {/* left */}
+
+            <div
+              className='left text-[#4a6352] font-semibold
+            flex flex-col gap-1.5'>
+              <p className='bg-[#e1f7e8]'>Reference</p>
+              <p>Matric No</p>
+              <p className='bg-[#e1f7e8]'>Amount Paid</p>
+              <p>Payment Time</p>
+              <p className='bg-[#e1f7e8]'>Paid Method</p>
+            </div>
+
+            {/* right */}
+
+            <div
+              className='right text-[#4a6352] 
+            flex flex-col gap-1.5'>
+              <p className='bg-[#e1f7e8]'>{reference}</p>
+              <p className='uppercase'>{customer?.replace("@gmail.com", "")}</p>
+              <p className='bg-[#e1f7e8]'>
+                <span>NGN </span>
+                {amount}
+              </p>
+              <p>{paid_at}</p>
+              <p className='bg-[#e1f7e8]'>{channel}</p>
+            </div>
+          </div>
         </div>
+      </div>
+      <div className=' text-center'>
+        <p className=' block text-[.9rem] mb-4'>
+          Click the button below to submit your reference ID
+        </p>
+        <Button
+          className='bg-[#4a6352] mb-20
+        py-3 font-semibold text-white text-[1.1rem]
+        w-[17rem] rounded-lg shadow'
+          text={"Submit"}
+        />
       </div>
     </div>
   );
+};
+
+const Button = ({ text, className }) => {
+  return <button className={className}> {text}</button>;
 };
 
 // import React, { useEffect, useState } from "react";
