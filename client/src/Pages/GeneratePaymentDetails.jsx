@@ -91,7 +91,7 @@ const ReferenceIdDetails = ({
         <Button
           className='bg-[#4a6352] mb-20
         py-3 font-semibold text-white text-[1.1rem]
-        w-[17rem] rounded-lg shadow'
+        w-[17rem] rounded-xl shadow'
           text={"Submit"}
         />
       </div>
