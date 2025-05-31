@@ -79,6 +79,7 @@ export default function GenerateReceipt() {
           focus:outline-none shadow disabled:font-semibold
            disabled:cursor-not-allowed'
             disabled
+            required
           />
         </div>
         <div className=' bg-[#ddebe0] px-3 py-1.5 rounded-xl shadow mt-2'>
@@ -86,7 +87,7 @@ export default function GenerateReceipt() {
             name=''
             id=''
             className=' border-none bg-transparent
-          focus:outline-[#8aa197]'>
+          focus:outline-none'>
             <option value=''></option>
           </select>
         </div>
