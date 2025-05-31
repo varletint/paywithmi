@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function GeneratePaymentDetails() {
   const date = new Date();
@@ -33,7 +34,7 @@ const ReferenceIdDetails = ({
   return (
     <div
       className=' min-h-screen max-w-3xl 
-    flex flex-col justify-between mx-auto py-6'>
+    flex flex-col gap-[10rem] mx-auto py-6'>
       <div
         className='w-[100%] h-scree  py-2 px-3
       flex flex-col text-[#04a737] gap-[3rem]'>
@@ -88,19 +89,27 @@ const ReferenceIdDetails = ({
         <p className=' block text-[.9rem] mb-4'>
           Click the button below to submit your reference ID
         </p>
-        <Button
+        {/* <Button
           className='bg-[#4a6352] mb-[6.1rem]
         py-3 font-semibold text-white text-[1.1rem]
         w-[17rem] rounded-xl shadow'
           text={"Submit"}
-        />
+        /> */}
+        <div className='mb-[rem]'>
+          <Link
+            to={`/generate-receipt/${reference}`}
+            className=' bg-[#4a6352] text-white font-semibold
+           py-3 px-[7rem] rounded-xl shadow mt-[3rem]'>
+            Submit ID
+          </Link>
+        </div>
       </div>
     </div>
   );
 };
 
 const Button = ({ text, className }) => {
-  return <button className={className}> {text}</button>;
+  return <Link className={className}> {text}</Link>;
 };
 
 // import React, { useEffect, useState } from "react";

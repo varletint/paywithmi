@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const studentSchema = new mongoose.Schema(
   {
-    matricNo: {
+    matric_no: {
       type: String,
       required: true,
     },
@@ -18,12 +18,17 @@ const studentSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    reference: {
+      type: String,
+      required: true,
+      unique: true,
+    },
   },
   {
     timestamps: true,
   }
 );
 
-const Stundent = mongoose.model("stundent", studentSchema);
+const Student = mongoose.model("student", studentSchema);
 
-export default Stundent;
+export default Student;

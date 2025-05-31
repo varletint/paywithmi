@@ -10,6 +10,7 @@ import AdminPrivate from "./compponents/AdminPrivate";
 import Page from "./Pages/Page";
 import CreateAccount from "./Pages/CreateAccount";
 import GeneratePaymentDetails from "./Pages/GeneratePaymentDetails";
+import GenerateReceipt from "./Pages/GenerateReceipt";
 
 function App() {
   return (
@@ -23,6 +24,10 @@ function App() {
           <Route
             path='/generate-payment-details'
             element={<GeneratePaymentDetails />}
+          />
+          <Route
+            element={<GenerateReceipt />}
+            path='/generate-receipt/:reference'
           />
           {/* <Route path='/register' element={<CreateAccount />} /> */}
 
