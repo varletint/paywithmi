@@ -63,7 +63,7 @@ export default function GenerateReceipt() {
             id='name'
             placeholder='Fullname'
             className=' border-none bg-[#ddebe0] 
-            placeholder:text-[#8aa197] rounded-[.5rem] px-4 py-2
+            placeholder:text-[#8aa197] rounded-[.5rem] px-4 py-3
           focus:outline-none shadow font-semibold'
           />
         </div>
@@ -75,13 +75,13 @@ export default function GenerateReceipt() {
             id='matric_no'
             value={matric_no}
             className=' border-none bg-slate-200 
-            disabled:text-[#8aa197] rounded-[.5rem] px-4 py-2
+            disabled:text-[#8aa197] rounded-[.5rem] px-4 py-3
           focus:outline-none shadow disabled:font-semibold
            disabled:cursor-not-allowed'
             disabled
           />
         </div>
-        <div className=' bg-[#ddebe0] px-3 py-0.5 rounded-xl shadow mt-2'>
+        <div className=' bg-[#ddebe0] px-3 py-1.5 rounded-xl shadow mt-2'>
           <select
             name=''
             id=''
