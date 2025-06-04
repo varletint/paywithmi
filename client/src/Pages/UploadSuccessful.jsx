@@ -112,26 +112,16 @@ export default function UploadSuccessful() {
     );
   };
   return (
-    <div className=' min-h-screan mx-auto max-w-[21rem] '>
-      <div
-        ref={receiptRef}
-        className='bg-white mt-5 shadow rounded-xl px-3 py-5'>
-        {/* <div className='text-center py-2 '>
-          <FaCheckCircle
-            className='w-[5rem] mx-auto h-[5rem] 
-          text-green-600 py- shadow'
-          />
-        </div> */}
+    <div
+      ref={receiptRef}
+      className=' min-h-screan bg-[#f1f7f3] p-5 mx-auto max-w-[21rem] '>
+      <div className='bg-white border mt-5 shadow rounded-xl px-3 py-5'>
         <div className='  flex justify-center px-'>
-          {/* <button className=' bg-[#4a6352] text-white w-[6rem] outline-none py-2'>
-            Print
-          </button> */}
-          <button
+          <div
             className='  rounded-full w-[5rem] h-[5rem] flex 
-          justify-center items-center shadow border'
-            onClick={handleDownload}>
+          justify-center items-center shadow border'>
             <FaCheckCircle className=' text-green-600  w-[5rem] h-[5rem] ' />
-          </button>
+          </div>
         </div>
 
         <div className='w-full border mt-7'></div>
