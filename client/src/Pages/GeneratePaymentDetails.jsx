@@ -341,7 +341,7 @@ function PaymentReceipt({ data }) {
                 <span>NGN </span>₦{(amount / 100).toFixed(2)} {currency}
               </p>
               <p>{new Date(paid_at).toLocaleString()}</p>
-              <p className='bg-[#e1f7e8]'>{channel}</p>
+              <p className='bg-[#e1f7e8] cha'>{channel}</p>
             </div>
           </div>
         </div>
