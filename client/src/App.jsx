@@ -11,6 +11,7 @@ import Page from "./Pages/Page";
 import CreateAccount from "./Pages/CreateAccount";
 import GeneratePaymentDetails from "./Pages/GeneratePaymentDetails";
 import TransanctionVerification from "./Pages/TransanctionVerification";
+import UploadSuccessful from "./Pages/UploadSuccessful";
 
 function App() {
   return (
@@ -28,6 +29,10 @@ function App() {
           <Route
             element={<TransanctionVerification />}
             path='/verify/:reference'
+          />
+          <Route
+            path='/verify-success/:refrence'
+            element={<UploadSuccessful />}
           />
           {/* <Route path='/register' element={<CreateAccount />} /> */}
 
