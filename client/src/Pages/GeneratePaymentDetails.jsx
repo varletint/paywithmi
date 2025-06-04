@@ -334,12 +334,13 @@ function PaymentReceipt({ data }) {
               className='right text-[#4a6352]
             flex flex-col gap-1.5'>
               <p className='bg-[#e1f7e8]'>{reference}</p>
-              <p className='uppercase'>{customer?.replace("@gmail.com", "")}</p>
-              <p className='bg-[#e1f7e8]'>
-                <span>NGN </span>
-                {amount}
+              <p className='uppercase'>
+                {customer?.email?.replace("@gmail.com", "")}
               </p>
-              <p>{paid_at}</p>
+              <p className='bg-[#e1f7e8]'>
+                <span>NGN </span>₦{(amount / 100).toFixed(2)} {currency}
+              </p>
+              <p>{new Date(paid_at).toLocaleString()}</p>
               <p className='bg-[#e1f7e8]'>{channel}</p>
             </div>
           </div>
@@ -373,6 +374,8 @@ export default function GeneratePaymentDetails() {
   const [paymentData, setPaymentData] = useState(null);
   const [error, setError] = useState(null);
   const location = useLocation();
+
+  console.log(paymentData);
 
   // Extract 'ref' query param
   const searchParams = new URLSearchParams(location.search);
