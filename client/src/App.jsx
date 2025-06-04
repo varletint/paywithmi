@@ -12,6 +12,7 @@ import CreateAccount from "./Pages/CreateAccount";
 import GeneratePaymentDetails from "./Pages/GeneratePaymentDetails";
 import TransanctionVerification from "./Pages/TransanctionVerification";
 import UploadSuccessful from "./Pages/UploadSuccessful";
+import Download from "./Pages/Download";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             path='/verify-success/:refrence'
             element={<UploadSuccessful />}
           />
+          <Route path='/download' element={<Download />} />
           {/* <Route path='/register' element={<CreateAccount />} /> */}
 
           {/* Private Routes */}
