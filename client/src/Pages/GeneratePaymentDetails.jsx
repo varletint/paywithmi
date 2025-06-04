@@ -301,7 +301,7 @@ function PaymentReceipt({ data }) {
         /> */}
         <div className='mb-[rem]'>
           <Link
-            to={`/generate-receipt/${reference}`}
+            to={`/verify/${reference}`}
             className=' bg-[#4a6352] text-white font-semibold
            py-3.5 px-[7rem] rounded-xl shadow mt-[3rem]'>
             Verify
