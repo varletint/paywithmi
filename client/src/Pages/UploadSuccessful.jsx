@@ -1,7 +1,8 @@
 import { FaCheckCircle, FaPrint } from "react-icons/fa";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
+import { useParams } from "react-router-dom";
 
 {
   /*export default function UploadSuccessful() {
@@ -49,7 +50,40 @@ import html2canvas from "html2canvas";
 }*/
 }
 export default function UploadSuccessful() {
+  const referenceSlug = useParams();
+  const [paymentData, setPaymentData] = useState([]);
   const receiptRef = useRef();
+
+  useEffect(() => {
+    const fetchReferenceDetails = async () => {
+      const reference = referenceSlug.reference;
+      if (!reference) return;
+
+      try {
+        const res = await fetch(
+          `https://api.paystack.co/transaction/verify/${reference}`,
+          {
+            method: "GET",
+            headers: {
+              Authorization:
+                "Bearer sk_test_1d3f0d7cd61c3a8476b995c7b0597daa67eb2d2f",
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        const json = await res.json();
+        if (json.status) {
+          setPaymentData(json.data);
+        } else {
+          setError(json.message || "Verification failed");
+        }
+      } catch (error) {
+        setError(error.message);
+      }
+    };
+    fetchReferenceDetails();
+  }, [referenceSlug.reference]);
+
   const handleDownload = async () => {
     const element = receiptRef.current;
     if (!element) return;
@@ -86,19 +120,26 @@ export default function UploadSuccessful() {
         </div>
         <div className='w-full border mt-7'></div>
         <div className='customer-details flex justify-between  py- mt-7'>
-          <div className='left flex flex-col gap-2'>
+          <div className='left flex flex-col gap-5'>
             <p className=' font-semibold text-sm'>Reference Number</p>
             <p className=' font-semibold text-sm'>Matric Number</p>
             <p className=' font-semibold text-sm'>Item Name</p>
             <p className=' font-semibold text-sm'> Amount</p>
             <p className=' font-semibold text-sm'>Transaction Date & Time</p>
           </div>
-          <div className='left flex flex-col gap-2'>
-            <p className=' font-semibold text-sm text-end'>Reference Number</p>
-            <p className=' font-semibold text-sm text-end'>Matric Number</p>
-            <p className=' font-semibold text-sm text-end'>Item Name</p>
-            <p className=' font-semibold text-sm text-end'> Amount</p>
+          <div className='right text-slate-600 flex flex-col gap-5'>
             <p className=' font-semibold text-sm text-end'>
+              {paymentData.reference || "NaN"}
+            </p>
+            <p className=' font-semibold text-sm text-end'>
+              {paymentData.customer?.email?.replace("@gmail.com", "") || "NaN"}
+            </p>
+            <p className=' font-semibold text-sm text-end'>Item Name</p>
+            <p className=' font-semibold text-sm text-end'>
+              {" "}
+              ₦{(paymentData.amount / 100).toFixed(2) || "NaN"}
+            </p>
+            <p className=' font-semibold text-xs text-slate-600 text-end'>
               {new Date().toLocaleString()}
             </p>
           </div>

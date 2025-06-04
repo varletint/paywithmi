@@ -32,7 +32,7 @@ function App() {
             path='/verify/:reference'
           />
           <Route
-            path='/verify-success/:refrence'
+            path='/verify-success/:reference'
             element={<UploadSuccessful />}
           />
           <Route path='/download' element={<Download />} />
