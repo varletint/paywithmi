@@ -6,7 +6,6 @@ export default function TransanctionVerification() {
   const referenceSlug = useParams();
   // const [matric_no, setMatricNo] = useState("u17/fns/css/1129");
   const [formData, setFormData] = useState({
-    matric_no,
     refrence: referenceSlug.reference,
   });
   // const [fullname, setFullname] = useState("");
@@ -61,7 +60,7 @@ export default function TransanctionVerification() {
           <p
             className='px-1.5 py-0.5 bg-[#adeec8f3] text-[#038329]
           rounded font-bold'>
-            ₦{(paymentData.amount / 100).toFixed(2)} {paymentData.currency}
+            ₦{(paymentData.amount / 100).toFixed(2)}
           </p>
         </div>
         <div className=' flex flex-col gap-1.5'>
