@@ -120,7 +120,107 @@ import { Link, useLocation } from "react-router-dom";
 //   );
 // };
 
-const ReferenceIdDetails = ({ data }) => {
+// const ReferenceIdDetails = ({ data }) => {
+//   const {
+//     reference,
+//     amount,
+//     paid_at,
+//     status,
+//     gateway_response,
+//     channel,
+//     currency,
+//     ip_address,
+//     metadata,
+//     customer,
+//   } = data;
+//   return (
+//     <div
+//       className=' min-h-screen max-w-3xl
+//     flex flex-col gap-[10rem] mx-auto py-6'>
+//       <div
+//         className='w-[100%] h-scree  py-2 px-3
+//       flex flex-col text-[#3e8f57] gap-[3rem]'>
+//         <div className='top flex flex-col sm:flex-row gap justify-between'>
+//           <h1 className=' font-bold text-nowrap text-xl'>VT Service</h1>
+
+//           <div className='top_details'>
+//             <p className='font-semibold text-nowrap text-[0.83rem] text-[#4a6352]'>
+//               Refrence Number:
+//               <span className='ml-2 text-red-500 '>{reference}</span>
+//             </p>
+//             <p className='font-semibold text-nowrap text-[0.83rem] text-[#4a6352]'>
+//               Date:
+//               <span className=' ml-2 text-[#4a6352] '>{"12/03/2025"}</span>
+//             </p>
+//           </div>
+//         </div>
+//         <div className='bottom '>
+//           <h1 className=' font-bold'>Transaction Details</h1>
+
+//           <div className='flex justify-between mt-5'>
+//             {/* left */}
+
+//             <div
+//               className='left text-[#4a6352] font-semibold
+//             flex flex-col gap-1.5'>
+//               <p className='bg-[#e1f7e8]'>Reference</p>
+//               <p>Matric No</p>
+//               <p className='bg-[#e1f7e8]'>Amount Paid</p>
+//               <p>Payment Time</p>
+//               <p className='bg-[#e1f7e8]'>Paid Method</p>
+//             </div>
+
+//             {/* right */}
+
+//             <div
+//               className='right text-[#4a6352]
+//             flex flex-col gap-1.5'>
+//               <p className='bg-[#e1f7e8]'>{reference}</p>
+//               <p className='uppercase'>{customer?.replace("@gmail.com", "")}</p>
+//               <p className='bg-[#e1f7e8]'>
+//                 <span>NGN </span>
+//                 {amount}
+//               </p>
+//               <p>{paid_at}</p>
+//               <p className='bg-[#e1f7e8]'>{channel}</p>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//       <div className=' text-center'>
+//         <p className=' block text-[.9rem] mb-4'>
+//           Click the button below to verify and submit your reference ID
+//         </p>
+//         {/* <Button
+//           className='bg-[#4a6352] mb-[6.1rem]
+//         py-3 font-semibold text-white text-[1.1rem]
+//         w-[17rem] rounded-xl shadow'
+//           text={"Submit"}
+//         /> */}
+//         <div className='mb-[rem]'>
+//           <Link
+//             to={`/generate-receipt/${reference}`}
+//             className=' bg-[#4a6352] text-white font-semibold
+//            py-3.5 px-[7rem] rounded-xl shadow mt-[3rem]'>
+//             Verify
+//           </Link>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+const Button = ({ text, className }) => {
+  return <Link className={className}> {text}</Link>;
+};
+
+// import React, { useEffect, useState } from "react";
+// import { useLocation } from "react-router-dom";
+
+// // Receipt UI component
+function PaymentReceipt({ data }) {
+  if (!data) return <p className='text-center py-4'>Loading receipt...</p>;
+
   const {
     reference,
     amount,
@@ -133,9 +233,67 @@ const ReferenceIdDetails = ({ data }) => {
     metadata,
     customer,
   } = data;
+
   return (
+    // <div className='max-w-md mx-auto p-6 border border-gray-300 rounded-lg shadow-lg bg-white text-gray-800 font-sans'>
+    //   <h2 className='text-2xl font-bold text-center mb-4'>Payment Receipt</h2>
+    //   <div className='mb-2'>
+    //     <strong>Customer Name:</strong> {customer.last_name}
+    //   </div>
+    //   <div className='mb-2'>
+    //     <strong>Product Name:</strong> {customer.first_name}
+    //   </div>
+    //   <div className='mb-2'>
+    //     <strong>Reference:</strong> {reference}
+    //   </div>
+    //   <div className='mb-2'>
+    //     <strong>Status:</strong>{" "}
+    //     <span
+    //       className={status === "success" ? "text-green-600" : "text-red-600"}>
+    //       {status.toUpperCase()}
+    //     </span>
+    //   </div>
+    //   <div className='mb-2'>
+    //     <strong>Amount Paid:</strong> ₦{(amount / 100).toFixed(2)} {currency}
+    //   </div>
+    //   <div className='mb-2'>
+    //     <strong>Payment Method:</strong> {channel}
+    //   </div>
+    //   <div className='mb-2'>
+    //     <strong>Payment Time:</strong> {new Date(paid_at).toLocaleString()}
+    //   </div>
+    //   <div className='mb-2'>
+    //     <strong>Gateway Response:</strong> {gateway_response}
+    //   </div>
+    //   <div className='mb-2'>
+    //     <strong>Email:</strong>
+    //     {customer?.email?.replace("@gmail.com", "") || "N/A"}
+    //   </div>
+
+    //   {/* <div className='mb-2'>
+    //     <strong>Email:</strong> {customer.email}
+    //   </div> */}
+    //   {/* <div className='mb-2'>
+    //     <strong>Referrer:</strong>{" "}
+    //     <a
+    //       href={metadata?.referrer}
+    //       className='text-blue-600 underline'
+    //       target='_blank'
+    //       rel='noopener noreferrer'>
+    //       {metadata?.referrer}
+    //     </a>
+    //   </div> */}
+
+    //   <div className='text-center mt-6'>
+    //     <button
+    //       onClick={() => window.print()}
+    //       className='bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700'>
+    //       Print Receipt
+    //     </button>
+    //   </div>
+    // </div>
     <div
-      className=' min-h-screen max-w-3xl 
+      className=' min-h-screen max-w-3xl
     flex flex-col gap-[10rem] mx-auto py-6'>
       <div
         className='w-[100%] h-scree  py-2 px-3
@@ -173,7 +331,7 @@ const ReferenceIdDetails = ({ data }) => {
             {/* right */}
 
             <div
-              className='right text-[#4a6352] 
+              className='right text-[#4a6352]
             flex flex-col gap-1.5'>
               <p className='bg-[#e1f7e8]'>{reference}</p>
               <p className='uppercase'>{customer?.replace("@gmail.com", "")}</p>
@@ -208,92 +366,7 @@ const ReferenceIdDetails = ({ data }) => {
       </div>
     </div>
   );
-};
-
-const Button = ({ text, className }) => {
-  return <Link className={className}> {text}</Link>;
-};
-
-// import React, { useEffect, useState } from "react";
-// import { useLocation } from "react-router-dom";
-
-// // Receipt UI component
-// function PaymentReceipt({ data }) {
-//   if (!data) return <p className='text-center py-4'>Loading receipt...</p>;
-
-//   const {
-// reference,
-// amount,
-// paid_at,
-// status,
-// gateway_response,
-// channel,
-// currency,
-// ip_address,
-// metadata,
-// customer,
-//   } = data;
-
-//   return (
-//     <div className='max-w-md mx-auto p-6 border border-gray-300 rounded-lg shadow-lg bg-white text-gray-800 font-sans'>
-//       <h2 className='text-2xl font-bold text-center mb-4'>Payment Receipt</h2>
-//       <div className='mb-2'>
-//         <strong>Customer Name:</strong> {customer.last_name}
-//       </div>
-//       <div className='mb-2'>
-//         <strong>Product Name:</strong> {customer.first_name}
-//       </div>
-//       <div className='mb-2'>
-//         <strong>Reference:</strong> {reference}
-//       </div>
-//       <div className='mb-2'>
-//         <strong>Status:</strong>{" "}
-//         <span
-//           className={status === "success" ? "text-green-600" : "text-red-600"}>
-//           {status.toUpperCase()}
-//         </span>
-//       </div>
-//       <div className='mb-2'>
-//         <strong>Amount Paid:</strong> ₦{(amount / 100).toFixed(2)} {currency}
-//       </div>
-//       <div className='mb-2'>
-//         <strong>Payment Method:</strong> {channel}
-//       </div>
-//       <div className='mb-2'>
-//         <strong>Payment Time:</strong> {new Date(paid_at).toLocaleString()}
-//       </div>
-//       <div className='mb-2'>
-//         <strong>Gateway Response:</strong> {gateway_response}
-//       </div>
-//       <div className='mb-2'>
-//         <strong>Email:</strong>
-//         {customer?.email?.replace("@gmail.com", "") || "N/A"}
-//       </div>
-
-//       {/* <div className='mb-2'>
-//         <strong>Email:</strong> {customer.email}
-//       </div> */}
-//       {/* <div className='mb-2'>
-//         <strong>Referrer:</strong>{" "}
-//         <a
-//           href={metadata?.referrer}
-//           className='text-blue-600 underline'
-//           target='_blank'
-//           rel='noopener noreferrer'>
-//           {metadata?.referrer}
-//         </a>
-//       </div> */}
-
-//       <div className='text-center mt-6'>
-//         <button
-//           onClick={() => window.print()}
-//           className='bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700'>
-//           Print Receipt
-//         </button>
-//       </div>
-//     </div>
-//   );
-// }
+}
 
 // // Main component that fetches and passes data
 export default function GeneratePaymentDetails() {
@@ -342,7 +415,7 @@ export default function GeneratePaymentDetails() {
       {!reference ? (
         <p className='text-center'>No reference found in URL.</p>
       ) : (
-        <ReferenceIdDetails data={paymentData} />
+        <PaymentReceipt data={paymentData} />
       )}
     </div>
   );
