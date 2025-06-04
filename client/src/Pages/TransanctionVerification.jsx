@@ -4,7 +4,7 @@ import { Button } from "./GeneratePaymentDetails";
 
 export default function TransanctionVerification() {
   const referenceSlug = useParams();
-  const [matric_no, setMatricNo] = useState("u17/fns/css/1129");
+  // const [matric_no, setMatricNo] = useState("u17/fns/css/1129");
   const [formData, setFormData] = useState({
     matric_no,
     refrence: referenceSlug.reference,
@@ -84,7 +84,10 @@ export default function TransanctionVerification() {
             type='text'
             name='matric_no'
             id='matric_no'
-            value={matric_no}
+            value={
+              paymentData.customer?.email?.replace("@gmail.com", "") ||
+              "No valid Matric Number"
+            }
             onChange={loadFormData}
             className=' border-none bg-slate-200 
             disabled:text-[#8aa197] rounded-[.5rem] px-4 py-3
