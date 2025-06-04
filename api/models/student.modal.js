@@ -14,13 +14,17 @@ const studentSchema = new mongoose.Schema(
       type: String,
       unique: true,
     },
-    itemId: {
+    /*  itemId: {
       type: String,
       required: true,
-    },
+    }, */
     reference: {
       type: String,
       required: true,
+      unique: true,
+    },
+    item: {
+      type: String,
       unique: true,
     },
   },

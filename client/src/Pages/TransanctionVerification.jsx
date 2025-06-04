@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Button } from "./GeneratePaymentDetails";
 
-export default function GenerateReceipt() {
+export default function TransanctionVerification() {
   const referenceSlug = useParams();
-  const [fullname, setFullname] = useState("");
   const [matric_no, setMatricNo] = useState("u17/fns/css/1129");
-  const [paymentData, setPaymentData] = useState("");
-  const [error, setError] = useState("");
+  const [formData, setFormData] = useState({
+    matric_no,
+    refrence: referenceSlug.reference,
+  });
+  // const [fullname, setFullname] = useState("");
+  const [paymentData, setPaymentData] = useState([]);
+  const [error, setError] = useState(null);
+
+  console.log(formData);
 
   useEffect(() => {
     const fetchReferenceDetails = async () => {
@@ -38,6 +45,9 @@ export default function GenerateReceipt() {
     fetchReferenceDetails();
   }, [referenceSlug.reference]);
 
+  const loadFormData = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
   const handleSubmit = (e) => {};
 
   return (
@@ -47,11 +57,11 @@ export default function GenerateReceipt() {
         className='mt-[8rem] 
        w-[26rem] px-4 py-2 flex flex-col gap-4'>
         <div className=' flex justify-between px-0.5 text-[1rem] font-semibold'>
-          <p>pqxoe2321</p>
+          <p>{paymentData.reference}</p>
           <p
             className='px-1.5 py-0.5 bg-[#adeec8f3] text-[#038329]
           rounded font-bold'>
-            <span className=' line-through'>N</span>2300
+            ₦{(paymentData.amount / 100).toFixed(2)} {paymentData.currency}
           </p>
         </div>
         <div className=' flex flex-col gap-1.5'>
@@ -60,7 +70,8 @@ export default function GenerateReceipt() {
           <input
             type='text'
             name='fullname'
-            id='name'
+            id='fullname'
+            onChange={loadFormData}
             placeholder='Fullname'
             className=' border-none bg-[#ddebe0] 
             placeholder:text-[#8aa197] rounded-[.5rem] px-4 py-3
@@ -74,6 +85,7 @@ export default function GenerateReceipt() {
             name='matric_no'
             id='matric_no'
             value={matric_no}
+            onChange={loadFormData}
             className=' border-none bg-slate-200 
             disabled:text-[#8aa197] rounded-[.5rem] px-4 py-3
           focus:outline-none shadow disabled:font-semibold
@@ -87,10 +99,18 @@ export default function GenerateReceipt() {
             name=''
             id=''
             className=' border-none bg-transparent
-          focus:outline-none'>
-            <option value=''></option>
+          focus:outline-none font-semibold text-[#45524c]'>
+            <option className=''> Payment for</option>
+            <option> Manual for CSC110</option>
+            <option> Manual for CSC213</option>
+            <option> Manual for CSC213</option>
           </select>
         </div>
+        <div className=''></div>
+        <Button
+          text={"Submit"}
+          className='text-center
+        font-semibold py-3 rounded-xl bg-[#4a6352] text-white'></Button>
       </form>
     </div>
   );

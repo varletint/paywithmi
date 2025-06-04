@@ -210,7 +210,7 @@ import { Link, useLocation } from "react-router-dom";
 //   );
 // };
 
-const Button = ({ text, className }) => {
+export const Button = ({ text, className }) => {
   return <Link className={className}> {text}</Link>;
 };
 
@@ -235,63 +235,6 @@ function PaymentReceipt({ data }) {
   } = data;
 
   return (
-    // <div className='max-w-md mx-auto p-6 border border-gray-300 rounded-lg shadow-lg bg-white text-gray-800 font-sans'>
-    //   <h2 className='text-2xl font-bold text-center mb-4'>Payment Receipt</h2>
-    //   <div className='mb-2'>
-    //     <strong>Customer Name:</strong> {customer.last_name}
-    //   </div>
-    //   <div className='mb-2'>
-    //     <strong>Product Name:</strong> {customer.first_name}
-    //   </div>
-    //   <div className='mb-2'>
-    //     <strong>Reference:</strong> {reference}
-    //   </div>
-    //   <div className='mb-2'>
-    //     <strong>Status:</strong>{" "}
-    //     <span
-    //       className={status === "success" ? "text-green-600" : "text-red-600"}>
-    //       {status.toUpperCase()}
-    //     </span>
-    //   </div>
-    //   <div className='mb-2'>
-    //     <strong>Amount Paid:</strong> ₦{(amount / 100).toFixed(2)} {currency}
-    //   </div>
-    //   <div className='mb-2'>
-    //     <strong>Payment Method:</strong> {channel}
-    //   </div>
-    //   <div className='mb-2'>
-    //     <strong>Payment Time:</strong> {new Date(paid_at).toLocaleString()}
-    //   </div>
-    //   <div className='mb-2'>
-    //     <strong>Gateway Response:</strong> {gateway_response}
-    //   </div>
-    //   <div className='mb-2'>
-    //     <strong>Email:</strong>
-    //     {customer?.email?.replace("@gmail.com", "") || "N/A"}
-    //   </div>
-
-    //   {/* <div className='mb-2'>
-    //     <strong>Email:</strong> {customer.email}
-    //   </div> */}
-    //   {/* <div className='mb-2'>
-    //     <strong>Referrer:</strong>{" "}
-    //     <a
-    //       href={metadata?.referrer}
-    //       className='text-blue-600 underline'
-    //       target='_blank'
-    //       rel='noopener noreferrer'>
-    //       {metadata?.referrer}
-    //     </a>
-    //   </div> */}
-
-    //   <div className='text-center mt-6'>
-    //     <button
-    //       onClick={() => window.print()}
-    //       className='bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700'>
-    //       Print Receipt
-    //     </button>
-    //   </div>
-    // </div>
     <div
       className=' min-h-screen max-w-3xl
     flex flex-col gap-[10rem] mx-auto py-6'>
@@ -338,7 +281,7 @@ function PaymentReceipt({ data }) {
                 {customer?.email?.replace("@gmail.com", "")}
               </p>
               <p className='bg-[#e1f7e8]'>
-                <span>NGN </span>₦{(amount / 100).toFixed(2)} {currency}
+                ₦{(amount / 100).toFixed(2)} {currency}
               </p>
               <p>{new Date(paid_at).toLocaleString()}</p>
               <p className='bg-[#e1f7e8] cha'>{channel}</p>

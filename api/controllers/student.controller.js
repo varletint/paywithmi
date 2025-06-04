@@ -9,7 +9,7 @@ export const createStudent = async (req, res, next) => {
       reference,
       matric_no,
       fullname,
-      itemId,
+      item,
     });
     await newStudent.save();
     res.status(200).json(newStudent);
