@@ -105,19 +105,35 @@ export default function UploadSuccessful() {
     pdf.addImage(imgData, "PNG", 0, 0, canvas.width, canvas.height);
 
     // 3) Trigger download (e.g. “receipt.pdf”)
-    pdf.save(`receipt-${`1239` || Date.now()}.pdf`);
+    pdf.save(
+      `receipt-${
+        paymentData?.customer?.email?.replace("@gmail.com", "") || Date.now()
+      }.pdf`
+    );
   };
   return (
     <div className=' min-h-screan mx-auto max-w-[21rem] '>
       <div
         ref={receiptRef}
         className='bg-white mt-5 shadow rounded-xl px-3 py-5'>
-        <div className='text-center py-2 '>
+        {/* <div className='text-center py-2 '>
           <FaCheckCircle
             className='w-[5rem] mx-auto h-[5rem] 
           text-green-600 py- shadow'
           />
+        </div> */}
+        <div className='  flex justify-center px-'>
+          {/* <button className=' bg-[#4a6352] text-white w-[6rem] outline-none py-2'>
+            Print
+          </button> */}
+          <button
+            className='  rounded-full w-[5rem] h-[5rem] flex 
+          justify-center items-center shadow border'
+            onClick={handleDownload}>
+            <FaCheckCircle className=' text-green-600  w-[5rem] h-[5rem] ' />
+          </button>
         </div>
+
         <div className='w-full border mt-7'></div>
         <div className='customer-details flex justify-between  py- mt-7'>
           <div className='left flex flex-col gap-5'>
