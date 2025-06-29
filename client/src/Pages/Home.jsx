@@ -119,7 +119,7 @@ const Benefits = () => {
         <h1 className=' text-center font-semibold text-3xl '>
           Benefits you get in single tool
         </h1>
-        <div className='flex gap-[5rem] mt-10 justify-center'>
+        <div className='flex gap-[1.5rem] mt-10 justify-center'>
           <div
             className='bg-[#d5e0db33] w-[150px] h-[150px] items-center
             flex flex-col justify-center gap-3  rounded-xl 
