@@ -3,23 +3,32 @@ import { Link } from "react-router-dom";
 import {
   HiCash,
   HiCurrencyDollar,
+  HiDocumentText,
   HiOutlineCash,
   HiOutlineCurrencyDollar,
+  HiSwitchHorizontal,
+  HiTicket,
   HiTrendingUp,
 } from "react-icons/hi";
 
 import Imghand from "../assets/images/file_00000000527c62308bc277ae2a95862d.png";
-import { FaMoneyBill, FaMoneyBillAlt, FaMoneyBillWave } from "react-icons/fa";
+import {
+  FaAddressBook,
+  FaMoneyBill,
+  FaMoneyBillAlt,
+  FaMoneyBillWave,
+} from "react-icons/fa";
 
 export default function Home() {
   return (
-    <div className='px-16 py-'>
+    <div className='py-'>
       <nav className=' py-3'>
         <Header />
       </nav>
 
       <HeroSection />
       <Benefits />
+      <PriceSection />
     </div>
   );
 }
@@ -64,7 +73,7 @@ const NavItems = () => {
 };
 const HeroSection = () => {
   return (
-    <section className='mt-10 h-[700px] '>
+    <section className='mt-10 h-[700px] px-16  '>
       <div className='flex justify-between '>
         <div className=' flex items-center'>
           <div
@@ -152,12 +161,41 @@ const Benefits = () => {
             flex flex-col justify-center gap-3  rounded-xl 
           shadow-sm'>
             <div className=' items-center'>
-              <HiTrendingUp className='w-[2rem] h-[2rem] text-[#3e5a4e] ' />
+              <HiSwitchHorizontal className='w-[2rem] h-[2rem] text-[#3e5a4e] ' />
             </div>
-            <p className='text-[#3e5a4e] font-semibold'>Grow</p>
+            <p className='text-[#3e5a4e] font-semibold'>Fast</p>
           </div>
         </div>
       </div>
     </section>
+  );
+};
+
+const PriceSection = () => {
+  return (
+    <section
+      className='bg-[#e7f1ecdc] mt-10 h-[700px] flex 
+      items-center justify-center
+  gap-[5rem]'>
+      <PriceCard />
+      <PriceCard />
+      <PriceCard billDes={"Perfect for paying Practical Manual and Books"} />
+    </section>
+  );
+};
+
+const PriceCard = ({ billName, billPrice, billDes, benefit1, benefit2 }) => {
+  return (
+    <div
+      className=' bg-[#d5e0db33] h-[380px] w-[280px] 
+    rounded-3xl shadow-md py-4 px-3
+    '>
+      <div className=''>
+        <div className=''>
+          <h1 className=' font-semibold text-xl'>2000 Card</h1>
+          <p className=' mt-2 leading-5 text-[#3e5a4e]'>{billDes}</p>
+        </div>
+      </div>
+    </div>
   );
 };
