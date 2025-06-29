@@ -152,7 +152,7 @@ const Benefits = () => {
             flex flex-col justify-center gap-3  rounded-xl 
           shadow-sm'>
             <div className=' items-center'>
-              <Hi className='w-[2rem] h-[2rem] text-[#3e5a4e] ' />
+              <HiTrendingUp className='w-[2rem] h-[2rem] text-[#3e5a4e] ' />
             </div>
             <p className='text-[#3e5a4e] font-semibold'>Grow</p>
           </div>
