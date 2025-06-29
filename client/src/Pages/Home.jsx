@@ -148,7 +148,7 @@ const Benefits = () => {
             <p className='text-[#3e5a4e] font-semibold'>Grow</p>
           </div>
           <div
-            className='bg-[#d5e0db33] w-[150px] h-[150px] items-center
+            className='bg-[#d5e0db34] w-[150px] h-[150px] items-center
             flex flex-col justify-center gap-3  rounded-xl 
           shadow-sm'>
             <div className=' items-center'>
