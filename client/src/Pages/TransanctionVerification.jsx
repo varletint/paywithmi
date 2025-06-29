@@ -10,9 +10,15 @@ export default function TransanctionVerification() {
   });
   // const [fullname, setFullname] = useState("");
   const [paymentData, setPaymentData] = useState([]);
+  const [paymentAmount, setPaymentAmount] = useState("");
+  const [items, setItems] = useState([]);
   const [error, setError] = useState(null);
 
+  const amount = (paymentData.amount / 100).toFixed(0);
+  const namount = Number(amount);
+
   console.log(formData);
+  console.log(namount);
 
   useEffect(() => {
     const fetchReferenceDetails = async () => {
@@ -34,6 +40,7 @@ export default function TransanctionVerification() {
         const json = await res.json();
         if (json.status) {
           setPaymentData(json.data);
+          setPaymentAmount(par(json.data.amount));
         } else {
           setError(json.message || "Verification failed");
         }
@@ -43,6 +50,19 @@ export default function TransanctionVerification() {
     };
     fetchReferenceDetails();
   }, [referenceSlug.reference]);
+
+  useEffect(() => {
+    const fetchItems = async () => {
+      try {
+        const res = await fetch(`/api/item/getItems?priceTag=${namount}`);
+        const data = await res.json();
+        console.log(data.items);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchItems();
+  });
 
   const loadFormData = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });

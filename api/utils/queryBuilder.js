@@ -6,6 +6,8 @@ export const buildItemQuery = (queryParams) => {
   if (queryParams.category) filters.category = queryParams.category;
   if (queryParams.slug) filters.slug = queryParams.slug;
   if (queryParams.itemId) filters._id = queryParams.itemId;
+  if (Number(queryParams.priceTag))
+    filters.priceTag = Number(queryParams.priceTag);
   if (queryParams.searchTerm) {
     filters.$or = [
       //   { itemName: { $regex: queryParams.searchTerm, $options: "i" } },

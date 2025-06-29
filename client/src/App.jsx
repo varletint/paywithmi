@@ -13,16 +13,19 @@ import GeneratePaymentDetails from "./Pages/GeneratePaymentDetails";
 import TransanctionVerification from "./Pages/TransanctionVerification";
 import UploadSuccessful from "./Pages/UploadSuccessful";
 import Download from "./Pages/Download";
+import Testing from "./Pages/Testing";
+import Home from "./Pages/Home";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<GotoPaymentPage />} />
+          <Route path='/' element={<Home />} />
           <Route path='/deptC-payment' element={<MakePayment />} />
           <Route path='/payment-types' element={<TypesOfPayment />} />
           <Route path='/login' element={<SignIn />} />
+          <Route path='/test' element={<Testing />} />
           <Route
             path='/generate-payment-details'
             element={<GeneratePaymentDetails />}
