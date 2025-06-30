@@ -55,26 +55,26 @@ const NavItems = () => {
   return (
     <ul className=' list-none flex gap-10 font-semibold text-[#3e5a4e]'>
       <li>
-        <a href='/'>Home</a>
+        <a href='#home'>Home</a>
       </li>
       <li>
-        <a href='/#'>Price</a>
+        <a href='#prices'>Price</a>
       </li>
       <li>
-        <a href='#'>Verify</a>
+        <a href='#verify'>Verify</a>
       </li>
       <li>
-        <a href='#'>Exchange</a>
+        <a href='#exchange'>Exchange</a>
       </li>
       <li>
-        <a href='#'>Contact</a>
+        <a href='#contact'>Contact</a>
       </li>
     </ul>
   );
 };
 const HeroSection = () => {
   return (
-    <section className='mt-28 h-[700px] px-16  '>
+    <section className='mt-28 h-[700px] px-16  ' id='home'>
       <div className='flex justify-between '>
         <div className=' flex items-center'>
           <div
@@ -240,7 +240,7 @@ const PriceCard = ({
             Get your Card
           </Link>
         </div>
-        <div className=' mt-4'>
+        <div className=' mt-5'>
           <ul
             className=' text-xs flex flex-col gap-2 font-medium
           text-[#3e5a4e]'>
