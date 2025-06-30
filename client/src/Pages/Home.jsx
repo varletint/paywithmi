@@ -182,7 +182,7 @@ const PriceSection = () => {
   return (
     <section
       className='bg-[#d5e0db33] [#e7f1ecdc] mt-10 h-[700px] flex
-    flex-col justify-center px-16'
+    flex-col justify-center px-16 overflow-auto'
       id='prices'>
       <div className=''>
         <h1 className=' text-[2rem] text-center font-semibold'>
@@ -246,7 +246,7 @@ const PriceCard = ({
   return (
     <div
       className=' bg-[#ffffff65] h-[380px] w-[280px] 
-    rounded-3xl shadow-md py-7 px-5
+    rounded-3xl shadow-md py-7 px-5 flex-shrink-0
     '>
       <div className=''>
         <div className=''>
@@ -270,7 +270,7 @@ const PriceCard = ({
         <div className=' mt-5'>
           <ul
             className=' text-xs flex flex-col gap-2 font-medium
-          text-[#3e5a4e]'>
+          text-[#3e5a4e] '>
             <li
               className='flex items-center gap-1
             '>
