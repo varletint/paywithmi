@@ -175,7 +175,7 @@ const Benefits = () => {
 const PriceSection = () => {
   return (
     <section
-      className='bg-[#e7f1ecdc] mt-10 h-[700px] flex
+      className='bg-[#d5e0db33] [e7f1ecdc] mt-10 h-[700px] flex
     flex-col justify-center'
       id='prices'>
       <div className=''>
@@ -187,17 +187,36 @@ const PriceSection = () => {
         className='flex 
       items-center justify-center
   gap-[5rem] mt-16'>
-        <PriceCard />
-        <PriceCard />
+        <PriceCard
+          billName={"Project Manual"}
+          billPrice={"4,100"}
+          billDes={"Get your Project Manual Book with zero-hassle"}
+          benefit1={"Project Manual"}
+          icon1={<HiOutlineCheckCircle />}
+          perPay='/Per student/ Per book'
+        />
+        <PriceCard
+          billName={"Field Trip Card"}
+          billDes={"Pay for your Field Trip at your finger tips"}
+          billPrice={"30,200"}
+          benefit1={"Field Trip"}
+          icon1={<HiOutlineCheckCircle />}
+          perPay={"/Per student"}
+        />
+
         <PriceCard
           billName={"Books and Manuals Card"}
-          billPrice={"2000"}
+          billPrice={"2,100"}
           billDes={"Perfect for paying Practical Manual and Books"}
           benefit1={"Manual for CSC 201"}
           benefit2={"Manual for CSC 204"}
           benefit3={"Manual for CSC 301"}
           benefit4={"Manual for CSC 104"}
-          icon={<HiOutlineCheckCircle />}
+          icon1={<HiOutlineCheckCircle />}
+          icon2={<HiOutlineCheckCircle />}
+          icon3={<HiOutlineCheckCircle />}
+          icon4={<HiOutlineCheckCircle />}
+          perPay={"/Per student/ Per book"}
         />
       </div>
     </section>
@@ -212,11 +231,15 @@ const PriceCard = ({
   benefit2,
   benefit3,
   benefit4,
-  icon,
+  icon1,
+  icon2,
+  icon3,
+  icon4,
+  perPay,
 }) => {
   return (
     <div
-      className=' bg-[#d5e0db33] h-[380px] w-[280px] 
+      className=' bg-[#ffffff65] h-[380px] w-[280px] 
     rounded-3xl shadow-md py-7 px-5
     '>
       <div className=''>
@@ -228,9 +251,7 @@ const PriceCard = ({
         </div>
         <div className=' mt-5  flex items-center gap-'>
           <h1 className=' text-2xl font-bold'>₦{billPrice}</h1>
-          <p className=' font-medium text-[.78rem] text-[#3e5a4e]'>
-            /Per student/ Per book
-          </p>
+          <p className=' font-medium text-[.78rem] text-[#3e5a4e]'>{perPay}</p>
         </div>
         <div
           className=' bg-[#3e5a4e] py-2 font-semibold 
@@ -247,24 +268,24 @@ const PriceCard = ({
             <li
               className='flex items-center gap-1
             '>
-              {icon} {benefit1}
+              {icon1} {benefit1}
             </li>
             <li
               className='flex items-center gap-1
             '>
-              {icon}
+              {icon2}
               {benefit2}
             </li>
             <li
               className='flex items-center gap-1
             '>
-              {icon}
+              {icon3}
               {benefit3}
             </li>
             <li
               className='flex items-center gap-1
             '>
-              {icon}
+              {icon4}
               {benefit4}
             </li>
           </ul>
