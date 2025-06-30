@@ -18,12 +18,17 @@ import {
   FaAddressBook,
   FaArrowRight,
   FaCopyright,
+  FaFacebook,
+  FaFacebookF,
+  FaGithub,
   FaMoneyBill,
   FaMoneyBillAlt,
   FaMoneyBillWave,
+  FaTwitter,
+  FaWhatsapp,
 } from "react-icons/fa";
 
-import { BiCopyright } from "react-icons/bi";
+import { BiCopyright, BiLogoTwitter } from "react-icons/bi";
 
 export default function Home() {
   return (
@@ -303,7 +308,10 @@ const PriceCard = ({
 
 const FooterSection = () => {
   return (
-    <section className='bg-[#010702] text-white px-16 py-10' id='contact'>
+    <section
+      className='bg-[#010702] flex flex-col gap-[3rem] text-white 
+      px-[10rem] py-[5rem]'
+      id='contact'>
       <div className='flex justify-between'>
         <div className=' flex flex-col gap-3 '>
           <h1 className=' uppercase font-bold text-xs text-[#b2e0cc]'>
@@ -313,18 +321,82 @@ const FooterSection = () => {
             Let's discuss your Payments with us
           </h1>
           <div
-            className='bg-[#3e5a4e] text-center mt-2 py-2 
+            className='bg-[#3e5a4e] text-center mt-2 py-3 
           rounded-xl flex justify-center items-center gap-0.5 font-semibold '>
             <a href='/#prices'> Try it now</a>
             <HiArrowRight />
           </div>
+          <h1 className=' uppercase font-bold mt-5 text-xs text-[#b2e0cc]'>
+            Email us
+          </h1>
+          <div
+            className='bg-[#b0c0b92c] text-center  py-3 
+          rounded-xl flex justify-center items-center border-[1px]
+          border-[#3e5a4e]'>
+            varletint@gmail.com
+          </div>
         </div>
-        <div className=''></div>
+        <div className='flex gap-[8rem]'>
+          <div className=''>
+            <h1 className=' text-sm font-semibold text-[#b2e0cc]'>
+              Quick links
+            </h1>
+            <ul className='mt-3'>
+              <li>
+                <a href='#home'>Home</a>
+              </li>
+              <li>
+                <a href='#prices'>Price</a>
+              </li>
+              <li>
+                <a href='#verify'>Verification</a>
+              </li>
+              <li>
+                <a href='#Exchange'>Exchange</a>
+              </li>
+            </ul>
+          </div>
+          <div className=''>
+            <h1 className=' text-sm font-semibold text-[#b2e0cc]'>
+              Quick links
+            </h1>
+            <ul className='mt-3'>
+              <li>
+                <a href='#home'>Home</a>
+              </li>
+              <li>
+                <a href='#Prices'>Price</a>
+              </li>
+              <li>
+                <a href='#verify'>Verification</a>
+              </li>
+              <li>
+                <a href='#Exchange'>Exchange</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div className=''>
-        <p className='flex justify-center items-center'>
-          <BiCopyright /> Varletint {new Date().getFullYear()}
+      <div className='border-1 w-full bg-white h-0.5 mt-5'> </div>
+      <div className=' flex justify-between'>
+        <p className='flex justify-center capitalize text-sm items-center'>
+          <BiCopyright /> Varletint {new Date().getFullYear()}.{}
+          <span className=' uppercase'> all rights reserved</span>
         </p>
+        <div className='flex gap-5'>
+          <a href='#' className='w-5'>
+            <FaGithub size={"25"} />
+          </a>
+          <a href='#' className='w-5'>
+            <FaTwitter size={"25"} />
+          </a>
+          <a href='#' className='w-5'>
+            <FaWhatsapp size={"25"} />
+          </a>
+          <a href='#' className='w-5'>
+            <FaFacebookF size={"25"} />
+          </a>
+        </div>
       </div>
     </section>
   );
