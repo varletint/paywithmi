@@ -175,7 +175,7 @@ const Benefits = () => {
 const PriceSection = () => {
   return (
     <section
-      className='bg-[#d5e0db33] [e7f1ecdc] mt-10 h-[700px] flex
+      className='bg-[#d5e0db33] [#e7f1ecdc] mt-10 h-[700px] flex
     flex-col justify-center px-16'
       id='prices'>
       <div className=''>
