@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {
+  HiArrowRight,
   HiCash,
   HiCurrencyDollar,
   HiDocumentText,
@@ -15,10 +16,14 @@ import {
 import Imghand from "../assets/images/file_00000000527c62308bc277ae2a95862d.png";
 import {
   FaAddressBook,
+  FaArrowRight,
+  FaCopyright,
   FaMoneyBill,
   FaMoneyBillAlt,
   FaMoneyBillWave,
 } from "react-icons/fa";
+
+import { BiCopyright } from "react-icons/bi";
 
 export default function Home() {
   return (
@@ -30,6 +35,7 @@ export default function Home() {
       <HeroSection />
       <Benefits />
       <PriceSection />
+      <FooterSection />
     </div>
   );
 }
@@ -292,5 +298,34 @@ const PriceCard = ({
         </div>
       </div>
     </div>
+  );
+};
+
+const FooterSection = () => {
+  return (
+    <section className='bg-[#010702] text-white px-16 py-10' id='contact'>
+      <div className='flex justify-between'>
+        <div className=' flex flex-col gap-3 '>
+          <h1 className=' uppercase font-bold text-xs text-[#b2e0cc]'>
+            Contact us
+          </h1>
+          <h1 className=' capitalize w-[200px] text-2xl font-semibold'>
+            Let's discuss your Payments with us
+          </h1>
+          <div
+            className='bg-[#3e5a4e] text-center mt-2 py-2 
+          rounded-xl flex justify-center items-center gap-0.5 font-semibold '>
+            <a href='/#prices'> Try it now</a>
+            <HiArrowRight />
+          </div>
+        </div>
+        <div className=''></div>
+      </div>
+      <div className=''>
+        <p className='flex justify-center items-center'>
+          <BiCopyright /> Varletint {new Date().getFullYear()}
+        </p>
+      </div>
+    </section>
   );
 };
