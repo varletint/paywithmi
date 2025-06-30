@@ -380,7 +380,7 @@ const FooterSection = () => {
       <div className='border-1 w-full bg-white h-0.5 mt-5'> </div>
       <div className=' flex justify-between'>
         <p className='flex justify-center capitalize text-sm items-center'>
-          <BiCopyright /> Varletint {new Date().getFullYear()}.{}
+          <BiCopyright /> VARLETINT {new Date().getFullYear()}.{}
           <span className=' uppercase'> all rights reserved</span>
         </p>
         <div className='flex gap-5'>
