@@ -187,7 +187,7 @@ const PriceSection = () => {
   return (
     <section
       className='bg-[#d5e0db33] [#e7f1ecdc] mt-10 h-[700px] flex
-    flex-col justify-center px-16 overflow-auto'
+    flex-col justify-center px-16 '
       id='prices'>
       <div className=''>
         <h1 className=' text-[2rem] text-center font-semibold'>
@@ -196,8 +196,8 @@ const PriceSection = () => {
       </div>
       <div
         className='flex 
-      items-center justify-center
-  gap-[5rem] mt-16'>
+      items-center lg:justify-center justify-between
+  gap-[2rem] mt-16  py-3 px-2 overflow-auto lg:gap-[5rem]'>
         <PriceCard
           billName={"Project Manual"}
           billPrice={"4,100"}
@@ -228,6 +228,7 @@ const PriceSection = () => {
           icon3={<HiOutlineCheckCircle />}
           icon4={<HiOutlineCheckCircle />}
           perPay={"/Per student/ Per book"}
+          slug={"2100"}
         />
       </div>
     </section>
@@ -247,6 +248,7 @@ const PriceCard = ({
   icon3,
   icon4,
   perPay,
+  slug,
 }) => {
   return (
     <div
@@ -268,7 +270,7 @@ const PriceCard = ({
           className=' bg-[#3e5a4e] py-2 font-semibold 
           text-white text-center mt-5 shadow-md
         rounded-xl'>
-          <Link to={"#"} className='w-full h-full'>
+          <Link to={`/pay/${slug}`} className='w-full h-full'>
             Get your Card
           </Link>
         </div>
@@ -336,23 +338,23 @@ const FooterSection = () => {
             varletint@gmail.com
           </div>
         </div>
-        <div className='flex gap-[8rem]'>
+        <div className='flex gap-[8rem] flex-row-reverse'>
           <div className=''>
             <h1 className=' text-sm font-semibold text-[#b2e0cc]'>
-              Quick links
+              Information
             </h1>
             <ul className='mt-3'>
               <li>
-                <a href='#home'>Home</a>
+                <a href='#home'>......</a>
               </li>
               <li>
-                <a href='#prices'>Price</a>
+                <a href='#prices'>......</a>
               </li>
               <li>
-                <a href='#verify'>Verification</a>
+                <a href='#verify'>......</a>
               </li>
               <li>
-                <a href='#Exchange'>Exchange</a>
+                <a href='#Exchange'>..........</a>
               </li>
             </ul>
           </div>
@@ -365,7 +367,7 @@ const FooterSection = () => {
                 <a href='#home'>Home</a>
               </li>
               <li>
-                <a href='#Prices'>Price</a>
+                <a href='#prices'>Price</a>
               </li>
               <li>
                 <a href='#verify'>Verification</a>

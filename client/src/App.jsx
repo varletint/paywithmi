@@ -22,7 +22,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/deptC-payment' element={<MakePayment />} />
+          <Route path='/pay/:price' element={<MakePayment />} />
           <Route path='/payment-types' element={<TypesOfPayment />} />
           <Route path='/login' element={<SignIn />} />
           <Route path='/test' element={<Testing />} />

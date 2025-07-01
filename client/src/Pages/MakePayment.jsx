@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 
 export default function MakePayment({ onClose }) {
   const [paymentDetails, setPaymentDetails] = useState("");
+  const priceParam = useParams();
+  console.log(priceParam.price);
   const itemName = "Manual 108";
   const [formData, setFormData] = useState({
     // matricNo: "",
@@ -12,7 +15,7 @@ export default function MakePayment({ onClose }) {
   });
   const back = "<";
 
-  console.log(formData);
+  // console.log(formData);
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -23,6 +26,8 @@ export default function MakePayment({ onClose }) {
 
   const handelSubmit = async (e) => {
     e.preventDefault();
+
+    if (!priceParam) return;
 
     try {
       const response = await fetch(
@@ -39,7 +44,7 @@ export default function MakePayment({ onClose }) {
             firstname: formData.firstname,
             lastname: formData.lastname,
             email: formData.email + "@gmail.com",
-            amount: parseFloat(formData.amount) * 100, // Convert to kobo/cents
+            amount: parseFloat(priceParam.price) * 100, // Convert to kobo/cents
           }),
         }
       );
@@ -50,7 +55,7 @@ export default function MakePayment({ onClose }) {
         // Redirect to Paystack checkout page
         // setPaymentDetails(data.data.authorization_url);
         window.location.href = data.data.authorization_url;
-        console.log(data);
+        // console.log(data);
       } else {
         // setError("Payment initialization failed. Please try again.");
       }
