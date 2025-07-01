@@ -105,13 +105,13 @@ const HeroSection = () => {
             <div className='w-full flex gap-5 mt-5'>
               <div
                 className='bg-[#3e5a4e] px-8 py-2.5 text-white 
-              text-wrap 
-              font-semibold rounded-xl shadow'>
+              
+              font-semibold rounded-xl shadow text-nowrap'>
                 Get to Know About Us
               </div>
               <div
                 className='border border-[#3e5a4e] px-8 py-2.5 text-[#3e5a4e] 
-              text-wrap 
+              text-nowrap 
               font-semibold rounded-xl shadow'>
                 Explore All Features
               </div>
