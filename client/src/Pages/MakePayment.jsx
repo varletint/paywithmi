@@ -82,7 +82,7 @@ export default function MakePayment({ onClose }) {
             className='
          font-bold text-sm text-[#35c93c]'>
             <span className='  '>NGN </span>
-            {formData.amount}
+            {priceParam.price}
           </h1>
         </div>
         <form onSubmit={handelSubmit} className='mt-5 w-full '>

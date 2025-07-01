@@ -201,6 +201,7 @@ const PriceSection = () => {
         <PriceCard
           billName={"Project Manual"}
           billPrice={"4,100"}
+          slug={"4100"}
           billDes={"Get your Project Manual Book with zero-hassle"}
           benefit1={"Project Manual"}
           icon1={<HiOutlineCheckCircle />}
@@ -210,6 +211,7 @@ const PriceSection = () => {
           billName={"Field Trip Card"}
           billDes={"Pay for your Field Trip at your finger tips"}
           billPrice={"30,200"}
+          slug={"30200"}
           benefit1={"Field Trip"}
           icon1={<HiOutlineCheckCircle />}
           perPay={"/Per student"}
