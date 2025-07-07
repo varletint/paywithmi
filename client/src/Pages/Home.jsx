@@ -210,7 +210,7 @@ const Benefits = () => {
           <div
             className='bg-[#d5e0db33] col-span-1  h-[150px] items-center
             flex flex-col justify-center gap-3  rounded-xl 
-          shadow-sm flex-shrink-0'>
+          shadow-md flex-shrink-0'>
             <div className=' items-center'>
               <HiOutlineCurrencyDollar className='w-[2rem] h-[2rem] text-[#3e5a4e] ' />
             </div>
@@ -219,7 +219,7 @@ const Benefits = () => {
           <div
             className='bg-[#d5e0db33] col-span-1 h-[150px] items-center
             flex flex-col justify-center gap-3  rounded-xl 
-          shadow-sm flex-shrink-0'>
+          shadow-md flex-shrink-0'>
             <div className=' items-center'>
               <HiOutlineCash className='w-[2rem] h-[2rem] text-[#3e5a4e] ' />
             </div>
@@ -228,7 +228,7 @@ const Benefits = () => {
           <div
             className='bg-[#d5e0db33] col-span-1 h-[150px] items-center
             flex flex-col justify-center gap-3  rounded-xl 
-          shadow-sm flex-shrink-0'>
+          shadow-md flex-shrink-0'>
             <div className=' items-center'>
               <HiTrendingUp className='w-[2rem] h-[2rem] text-[#3e5a4e] ' />
             </div>
@@ -237,7 +237,7 @@ const Benefits = () => {
           <div
             className='bg-[#d5e0db34] col-span-1 h-[150px] items-center
             flex flex-col justify-center gap-3  rounded-xl 
-          shadow-sm flex-shrink-0'>
+          shadow-md flex-shrink-0'>
             <div className=' items-center'>
               <HiSwitchHorizontal className='w-[2rem] h-[2rem] text-[#3e5a4e] ' />
             </div>
