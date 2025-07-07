@@ -278,7 +278,7 @@ const HeroSection = () => {
             </div> */}
           </div>
         </div>
-        <div className=' lg:w-[40%] w-full bg-blue-500   h-[700px] relative  '>
+        <div className=' lg:w-[40%] w-full   h-[700px] relative  '>
           <img
             className=' w-[100%]  h-full lg:object-cover object-cover'
             src={Imghand}
