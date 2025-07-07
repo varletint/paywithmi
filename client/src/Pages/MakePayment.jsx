@@ -41,8 +41,8 @@ export default function MakePayment({ onClose }) {
           },
           body: JSON.stringify({
             // matricNo: formData.matricNo,
-            firstname: formData.firstname,
-            lastname: formData.lastname,
+            // firstname: formData.firstname,
+            // lastname: formData.lastname,
             email: formData.email + "@gmail.com",
             amount: parseFloat(priceParam.price) * 100, // Convert to kobo/cents
           }),
@@ -120,7 +120,7 @@ export default function MakePayment({ onClose }) {
             </div>
             <div className='input-div'>
               {/* <label htmlFor='Amount'>Amount:</label> */}
-              <input
+              {/* <input
                 type='text'
                 id='lastname'
                 name='lastname'
@@ -130,7 +130,7 @@ export default function MakePayment({ onClose }) {
                 className='h-[2.9rem] tracking-wide
               w-full border-[0.12rem] border-[#333] rounded-xl px-5'
                 required
-              />
+              /> */}
             </div>
             <h4>
               <div className='button-section flex justify-between gap-10'>
