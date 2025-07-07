@@ -39,7 +39,7 @@ export default function Home() {
       <HeroSection />
       <Benefits />
       <PriceSection />
-      {/* <FooterSection /> */}
+      <FooterSection />
     </div>
   );
 }
@@ -346,10 +346,10 @@ const FooterSection = () => {
   return (
     <section
       className='bg-[#010702] flex flex-col gap-[3rem] text-white 
-      px-[10rem] py-[5rem]'
+      sm:px-[5rem] lg:px[10rem] md:px-[5rem] px-[2rem] py-[5rem] '
       id='contact'>
-      <div className='flex justify-between'>
-        <div className=' flex flex-col gap-3 '>
+      <div className='flex flex-col-reverse sm:flex-row justify-between '>
+        <div className=' flex flex-col gap-3 sm:mt-0 mt-10 '>
           <h1 className=' uppercase font-bold text-xs text-[#b2e0cc]'>
             Contact us
           </h1>
@@ -372,7 +372,7 @@ const FooterSection = () => {
             varletint@gmail.com
           </div>
         </div>
-        <div className='flex gap-[8rem] flex-row-reverse'>
+        <div className='flex sm:gap-[8rem] gap-[1rem] sm:flex-row-reverse flex-col-reverse'>
           <div className=''>
             <h1 className=' text-sm font-semibold text-[#b2e0cc]'>
               Information
@@ -414,12 +414,12 @@ const FooterSection = () => {
         </div>
       </div>
       <div className='border-1 w-full bg-white h-0.5 mt-5'> </div>
-      <div className=' flex justify-between'>
-        <p className='flex justify-center capitalize text-sm items-center'>
-          <BiCopyright /> VARLETINT {new Date().getFullYear()}.{}
+      <div className=' flex flex-col sm:flex-row sm:justify-between justify-center'>
+        <p className='flex justify-center uppercase text-xs items-center text-nowrap'>
+          <BiCopyright /> varletint {new Date().getFullYear()}.{}
           <span className=' uppercase'> all rights reserved</span>
         </p>
-        <div className='flex gap-5'>
+        <div className='flex gap-5 justify-center sm:mt-0 mt-4'>
           <a href='#' className='w-5'>
             <FaGithub size={"25"} />
           </a>
