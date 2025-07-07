@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   HiArrowRight,
   HiCash,
   HiCurrencyDollar,
   HiDocumentText,
+  HiMenu,
+  HiMenuAlt1,
+  HiMenuAlt2,
+  HiMenuAlt3,
+  HiMenuAlt4,
   HiOutlineCash,
   HiOutlineCheckCircle,
   HiOutlineCurrencyDollar,
+  HiOutlineMenuAlt1,
+  HiOutlineMenuAlt4,
   HiSwitchHorizontal,
   HiTicket,
   HiTrendingUp,
@@ -21,6 +28,7 @@ import {
   FaFacebook,
   FaFacebookF,
   FaGithub,
+  FaHamburger,
   FaMoneyBill,
   FaMoneyBillAlt,
   FaMoneyBillWave,
@@ -33,11 +41,11 @@ import { BiCopyright, BiLogoTwitter } from "react-icons/bi";
 export default function Home() {
   return (
     <div className='py-'>
-      <nav
-        className=' py-3  fixed left-[-5%] sm:left-1/2 sm:right-1/2 top-0  
-      z-[101] transition-all duration-500 ease-in-out'>
-        <Header />
-      </nav>
+      {/* <nav
+           className=' py  [sm:fixed relative left-[-5%] sm:left-1/2 sm:right-1/2 top-0]
+       z-[101] transition-all duration-500 ease-in-out' >
+      </nav> */}
+      <Header />
       <HeroSection />
       <Benefits />
       <PriceSection />
@@ -47,69 +55,156 @@ export default function Home() {
 }
 
 const Header = () => {
+  const [open, setOpen] = useState("");
+  const toggleMenu = () => {
+    alert(1);
+  };
   return (
-    <div
-      className='  min-h-16
-  flex items-center justify-center '>
-      <div
-        className=' sm:bg-white bg-transparent px-9 py-3 flex flex-col sm:flex-row
-         items-center sm:gap[7rem] gap-[1.5rem]
-      sm:shadow rounded-2xl '>
+    <>
+      <nav
+        className='  min-h-16
+  sm:flex items-center justify-between desktop-nav hidden'>
         <div
-          className='logo font-semibold text-2xl bg-white sm:py-0
-        sm:px-0 px-6 py-2  sm:shadow-none shadow rounded-2xl'>
-          Logo
+          className=' flex justify-between w-full bg-white min-h-[10vh] 
+        shadow items-center border-b-2 z-[101] px-6
+         lg:px-[10rem] md:px-[3rem]'>
+          <div
+            //   className='logo font-semibold sm:text-3xl text-2xl bg-white sm:py-0
+            // sm:px-0 px-6 py-2  sm:shadow-none shadow rounded-2xl'
+            className='text-3xl font-semibold'>
+            Logo
+          </div>
+          <div className='nav-links  sm:block hidden '>
+            <NavItems />
+          </div>
         </div>
-        <div className='nav-links  sm:block'>
-          <NavItems />
+      </nav>
+      <nav className='mobile-nav sm:hidden'>
+        <div
+          className=' flex justify-between w-full bg-white min-h-[10vh] 
+        shadow items-center border-b-2 z-[101] px-6
+         lg:px-[10rem] md:px-[3rem]'>
+          <div className='text-3xl font-semibold'>Logo</div>
+          <div className='nav-links  relative inline-block '>
+            <HiMenu size={30} onClick={() => setOpen("open")} />
+            {/* <MobileNavItems /> */}
+            <div
+              className={`list-none absolute z-[102] right-0 top-[100%]
+      w-fit bg-white overflow-hidden transition-all 
+      shadow-md rounded-xl hidden flex-col px-[2rem] gap-[1.5rem] py-6
+      font-medium text-[1.1rem] 
+      duration-[1s] ease-in-out menu-links ${open}
+     `}>
+              <li>
+                <a
+                  href='#home '
+                  //   className='{sm:px-0 px-4 bg-white/ rounded-2xl
+                  // sm:shadow-none shadow py-1}'
+                  className='  '
+                  onClick={() => setOpen("")}>
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href='#prices' className='' onClick={() => setOpen("")}>
+                  Price
+                </a>
+              </li>
+              <li>
+                <a href='#verify' className='' onClick={() => setOpen("")}>
+                  Verify
+                </a>
+              </li>
+              <li>
+                <a href='#exchange' className='' onClick={() => setOpen("")}>
+                  Exchange
+                </a>
+              </li>
+              <li>
+                <a href='#contact' className='' onClick={() => setOpen("")}>
+                  Contact
+                </a>
+              </li>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      </nav>
+    </>
   );
 };
 
-const NavItems = () => {
+const MobileNavItems = ({ open }) => {
   return (
-    <ul
-      className=' list-none flex sm:flex-row flex-col sm:gap-10   
-     gap-3 font-semibold text-[#3e5a4e] hdden'>
+    <div
+      className={`list-none absolute z-[102] right-0 top-[100%]
+      w-fit bg-white overflow-hidden transition-all 
+      shadow-md rounded-xl hidden flex-col px-[2rem] gap-[1.5rem] py-6
+      font-medium text-[1.1rem] max-h-0
+      duration-[1s] ease-in-out menu-links ${open}
+     `}>
       <li>
         <a
           href='#home '
-          className='px-4 bg-white rounded-2xl 
-        sm:shadow-none shadow py-1'>
+          //   className='{sm:px-0 px-4 bg-white/ rounded-2xl
+          // sm:shadow-none shadow py-1}'
+          className=' '>
           Home
         </a>
       </li>
       <li>
-        <a
-          href='#prices'
-          className='px-4 bg-white rounded-2xl 
-        sm:shadow-none shadow py-1'>
+        <a href='#prices' className=''>
           Price
         </a>
       </li>
       <li>
-        <a
-          href='#verify'
-          className='px-4 bg-white rounded-2xl 
-        sm:shadow-none shadow py-1'>
+        <a href='#verify' className=''>
           Verify
         </a>
       </li>
       <li>
-        <a
-          href='#exchange'
-          className='px-4 bg-white rounded-2xl 
-        sm:shadow-none shadow py-1'>
+        <a href='#exchange' className=''>
           Exchange
         </a>
       </li>
       <li>
+        <a href='#contact' className=''>
+          Contact
+        </a>
+      </li>
+    </div>
+  );
+};
+const NavItems = () => {
+  return (
+    <ul
+      className=' list-none flex sm:flex-row flex-col sm:gap-3.5   
+     gap-3 font-semibold text-[#3e5a4e] hdden'>
+      <li>
         <a
-          href='#contact'
-          className='px-4 bg-white rounded-2xl 
-        sm:shadow-none shadow py-1'>
+          href='#home '
+          //   className='{sm:px-0 px-4 bg-white/ rounded-2xl
+          // sm:shadow-none shadow py-1}'
+          className=''>
+          Home
+        </a>
+      </li>
+      <li>
+        <a href='#prices' className=''>
+          Price
+        </a>
+      </li>
+      <li>
+        <a href='#verify' className=''>
+          Verify
+        </a>
+      </li>
+      <li>
+        <a href='#exchange' className=''>
+          Exchange
+        </a>
+      </li>
+      <li>
+        <a href='#contact' className=''>
           Contact
         </a>
       </li>
@@ -119,7 +214,7 @@ const NavItems = () => {
 const HeroSection = () => {
   return (
     <section
-      className='mt-28 h-[700px] lg:px-16 e lg:max-w-[100rem]  bg-geen-400 mx-auto  
+      className='mt- h-[700px] lg:px-16 e lg:max-w-[100rem]  bg-geen-400 mx-auto  
     max- '
       id='home'>
       <div
