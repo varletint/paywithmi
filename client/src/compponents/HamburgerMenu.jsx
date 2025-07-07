@@ -41,36 +41,21 @@ const HamburgerMenu = () => {
         <nav
           className={`mt-1 space-y-6 text-lg font-medium list-none 
          px-10 py-4 ${isOpen ? "flex flex-col" : "hidden"}`}>
-          <li>
-            <a
-              href='#home '
-              //   className='{sm:px-0 px-4 bg-white/ rounded-2xl
-              // sm:shadow-none shadow py-1}'
-              className=' '
-              onClick={() => setIsOpen(!open)}>
-              Home
-            </a>
-          </li>
-          <li>
-            <a href='#prices' className='' onClick={() => setIsOpen(!open)}>
-              Price
-            </a>
-          </li>
-          <li>
-            <a href='#verify' className='' onClick={() => setIsOpen(!open)}>
-              Verify
-            </a>
-          </li>
-          <li>
-            <a href='#exchange' className='' onClick={() => setIsOpen(!open)}>
-              Exchange
-            </a>
-          </li>
-          <li>
-            <a href='#contact' className='' onClick={() => setIsOpen(!open)}>
-              Contact
-            </a>
-          </li>
+          <a href='#home' className=''>
+            Home
+          </a>
+          <a href='#prices' className=''>
+            Price
+          </a>
+          <a href='#verify' className=''>
+            Verify
+          </a>
+          <a href='#exchange' className=''>
+            Exchange
+          </a>
+          <a href='#contact' className=''>
+            Contact
+          </a>
         </nav>
       </motion.div>
 
