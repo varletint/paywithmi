@@ -34,13 +34,13 @@ export default function Home() {
   return (
     <div className='py-'>
       <nav className=' py-3  fixed left-1/2 right-1/2 top-0 '>
-        <Header />
+        {/* <Header /> */}
       </nav>
 
       <HeroSection />
-      <Benefits />
+      {/* <Benefits />
       <PriceSection />
-      <FooterSection />
+      <FooterSection /> */}
     </div>
   );
 }
@@ -85,45 +85,78 @@ const NavItems = () => {
 };
 const HeroSection = () => {
   return (
-    <section className='mt-28 h-[700px] px-16  ' id='home'>
-      <div className='flex justify-between '>
-        <div className=' flex items-center'>
+    <section
+      className='mt-28 h-[700px] lg:px-16 e lg:max-w-[100rem]  bg-geen-400 mx-auto  
+    max- '
+      id='home'>
+      <div
+        className='lg:flex-row flex items-center flex-col-reverse
+      lg:justify-between    bg-re-500 lg:w--[90rem] relative '>
+        <div className=' flex items-center lg:relative absolute left-0 bottom-[5%] z-[100]'>
           <div
-            className='heroHeader  w-[30rem]
+            className='her-details px-4  py-4
+            lg:w-[30rem] sm:w-[100%] bgyellow-300 
+            flex-col sm:ml-6 md:ml-0 sm:bg-[#fff0]  bg-[#7270707c]/ backdrop-blur-[1px]
         '>
-            <h1 className='text-[4rem] font-bold leading-none'>
-              Reach Your Payment Goals with Us
-            </h1>
-            <div className='details  mt-5 leading-relaxed'>
-              <p>
-                Unlock the full payment of your department transactions with us
-                the cutting-edge solution for a your stream line Departmental
-                expenses.
-              </p>
+            <div className=''>
+              <h1
+                className='sm:text-[4rem] 
+              text-[3rem] sm:w-[30rem] w-full text-[#fff]
+               font-bold leading-none lg:text-[#333]'>
+                Reach Your Payment Goals with Us
+              </h1>
+              <div className='details  mt-5 leading-relaxed w-[21rem]'>
+                <p
+                  className=' text-[#ffffff] font-medium 
+                lg:text-[#123]'>
+                  Unlock the full payment of your department transactions with
+                  us the cutting-edge solution for a your stream line
+                  Departmental expenses.
+                </p>
+              </div>
+            </div>
+            <div className=' items-center flex gap-5 mt-4'>
+              <Link
+                className='bg-[#3e5a4e] backdrop-blur-lg border 
+                border-[#3e5a4e]/30
+
+                [#3e5a4e] px-10 text-white
+              font-semibold py-3 rounded'>
+                Get to Know us
+              </Link>
+              <Link
+                className='bg-[#0f472f73]/ backdrop-blur-lg border 
+                border-[#3e5a4e]/30
+
+                [#3e5a4e] px-10 text-[#064127]
+              font-semibold py-3 rounded hidden lg:block'>
+                Get to Know us
+              </Link>
             </div>
 
-            <div className='w-full flex gap-5 mt-5'>
-              <div
+            {/* <div className='w-ful sm:flex-row flex  flex-col gap-5 mt-5'>
+              <Link
                 className='bg-[#3e5a4e] px-8 py-2.5 text-white 
               
               font-semibold rounded-xl shadow text-nowrap'>
                 Get to Know About Us
-              </div>
+              </Link>
               <div
-                className='border border-[#3e5a4e] px-8 py-2.5 text-[#3e5a4e] 
+                className='border hidden md:block border-[#3e5a4e] px-8 py-2.5 text-[#3e5a4e] 
               text-nowrap 
               font-semibold rounded-xl shadow'>
                 Explore All Features
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
-        <div className=' w-[35rem] h-[700px]  '>
+        <div className=' lg:w-[40%] w-full bg-blue-500   h-[700px] relative  '>
           <img
-            className=' w-full h-full object-cover rounded-3xl'
+            className=' w-[100%]  h-full lg:object-cover object-cover'
             src={Imghand}
             alt='image showing a hand holding a phone'
           />
+          <div className='lg:hidden  absolute black-div'></div>
         </div>
       </div>
     </section>
@@ -144,7 +177,7 @@ const Benefits = () => {
           <div
             className='bg-[#d5e0db33] w-[150px] h-[150px] items-center
             flex flex-col justify-center gap-3  rounded-xl 
-          shadow-sm'>
+          shadow-sm flex-shrink-0'>
             <div className=' items-center'>
               <HiOutlineCurrencyDollar className='w-[2rem] h-[2rem] text-[#3e5a4e] ' />
             </div>
@@ -153,7 +186,7 @@ const Benefits = () => {
           <div
             className='bg-[#d5e0db33] w-[150px] h-[150px] items-center
             flex flex-col justify-center gap-3  rounded-xl 
-          shadow-sm'>
+          shadow-sm flex-shrink-0'>
             <div className=' items-center'>
               <HiOutlineCash className='w-[2rem] h-[2rem] text-[#3e5a4e] ' />
             </div>
@@ -162,7 +195,7 @@ const Benefits = () => {
           <div
             className='bg-[#d5e0db33] w-[150px] h-[150px] items-center
             flex flex-col justify-center gap-3  rounded-xl 
-          shadow-sm'>
+          shadow-sm flex-shrink-0'>
             <div className=' items-center'>
               <HiTrendingUp className='w-[2rem] h-[2rem] text-[#3e5a4e] ' />
             </div>
@@ -171,7 +204,7 @@ const Benefits = () => {
           <div
             className='bg-[#d5e0db34] w-[150px] h-[150px] items-center
             flex flex-col justify-center gap-3  rounded-xl 
-          shadow-sm'>
+          shadow-sm flex-shrink-0'>
             <div className=' items-center'>
               <HiSwitchHorizontal className='w-[2rem] h-[2rem] text-[#3e5a4e] ' />
             </div>
@@ -254,7 +287,7 @@ const PriceCard = ({
 }) => {
   return (
     <div
-      className=' bg-[#ffffff65] h-[380px] w-[280px] 
+      className=' bg-[#ffffff65] border border-[#0f380211] h-[380px] w-[280px] 
     rounded-3xl shadow-md py-7 px-5 flex-shrink-0
     '>
       <div className=''>
@@ -405,3 +438,6 @@ const FooterSection = () => {
     </section>
   );
 };
+
+const ExchangeSection = () => {};
+const VeriyfSection = () => {};

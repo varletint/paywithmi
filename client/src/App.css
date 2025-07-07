@@ -78,3 +78,17 @@ option {
 .title {
   font-size: 1.3rem;
 }
+
+.black-div {
+  content: "";
+  width: 100%;
+  height: 90%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-image: linear-gradient(
+    to top,
+    rgba(19, 87, 64, 0.438) 0.1%,
+    transparent
+  );
+}
