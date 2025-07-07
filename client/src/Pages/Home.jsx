@@ -33,8 +33,10 @@ import { BiCopyright, BiLogoTwitter } from "react-icons/bi";
 export default function Home() {
   return (
     <div className='py-'>
-      <nav className=' py-3  fixed left-1/2 right-1/2 top-0 '>
-        {/* <Header /> */}
+      <nav
+        className=' py-3  fixed left-[-5%] sm:left-1/2 sm:right-1/2 top-0  
+      z-[101] transition-all duration-500 ease-in-out'>
+        <Header />
       </nav>
       <HeroSection />
       <Benefits />
@@ -50,10 +52,15 @@ const Header = () => {
       className='  min-h-16
   flex items-center justify-center '>
       <div
-        className=' bg-white px-9 py-3 flex items-center gap-[7rem]
-      shadow rounded-2xl'>
-        <div className='logo font-semibold text-2xl'>Logo</div>
-        <div className='nav-links'>
+        className=' sm:bg-white bg-transparent px-9 py-3 flex flex-col sm:flex-row
+         items-center sm:gap[7rem] gap-[1.5rem]
+      sm:shadow rounded-2xl '>
+        <div
+          className='logo font-semibold text-2xl bg-white sm:py-0
+        sm:px-0 px-6 py-2  sm:shadow-none shadow rounded-2xl'>
+          Logo
+        </div>
+        <div className='nav-links  sm:block'>
           <NavItems />
         </div>
       </div>
@@ -63,21 +70,48 @@ const Header = () => {
 
 const NavItems = () => {
   return (
-    <ul className=' list-none flex gap-10 font-semibold text-[#3e5a4e]'>
+    <ul
+      className=' list-none flex sm:flex-row flex-col sm:gap-10   
+     gap-3 font-semibold text-[#3e5a4e] hdden'>
       <li>
-        <a href='#home'>Home</a>
+        <a
+          href='#home '
+          className='px-4 bg-white rounded-2xl 
+        sm:shadow-none shadow py-1'>
+          Home
+        </a>
       </li>
       <li>
-        <a href='#prices'>Price</a>
+        <a
+          href='#prices'
+          className='px-4 bg-white rounded-2xl 
+        sm:shadow-none shadow py-1'>
+          Price
+        </a>
       </li>
       <li>
-        <a href='#verify'>Verify</a>
+        <a
+          href='#verify'
+          className='px-4 bg-white rounded-2xl 
+        sm:shadow-none shadow py-1'>
+          Verify
+        </a>
       </li>
       <li>
-        <a href='#exchange'>Exchange</a>
+        <a
+          href='#exchange'
+          className='px-4 bg-white rounded-2xl 
+        sm:shadow-none shadow py-1'>
+          Exchange
+        </a>
       </li>
       <li>
-        <a href='#contact'>Contact</a>
+        <a
+          href='#contact'
+          className='px-4 bg-white rounded-2xl 
+        sm:shadow-none shadow py-1'>
+          Contact
+        </a>
       </li>
     </ul>
   );
