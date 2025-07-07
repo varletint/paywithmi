@@ -406,7 +406,9 @@ const FooterSection = () => {
             varletint@gmail.com
           </div>
         </div>
-        <div className='flex sm:gap-[8rem] gap-[1rem] sm:flex-row-reverse flex-col-reverse'>
+        <div
+          className='flex sm:gap-[8rem] gap-[1rem] 
+        justify-between sm:justify-normal flex-row-reverse'>
           <div className=''>
             <h1 className=' text-sm font-semibold text-[#b2e0cc]'>
               Information
