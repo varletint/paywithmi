@@ -37,6 +37,7 @@ import {
 } from "react-icons/fa";
 
 import { BiCopyright, BiLogoTwitter } from "react-icons/bi";
+import HamburgerMenu from "../compponents/HamburgerMenu";
 
 export default function Home() {
   return (
@@ -46,6 +47,7 @@ export default function Home() {
        z-[101] transition-all duration-500 ease-in-out' >
       </nav> */}
       <Header />
+
       <HeroSection />
       <Benefits />
       <PriceSection />
@@ -66,7 +68,7 @@ const Header = () => {
   sm:flex items-center justify-between desktop-nav hidden'>
         <div
           className=' flex justify-between w-full bg-white min-h-[10vh] 
-        shadow items-center border-b-2 z-[101] px-6
+        shadow items-center border-b- z-[101] px-6
          lg:px-[10rem] md:px-[3rem]'>
           <div
             //   className='logo font-semibold sm:text-3xl text-2xl bg-white sm:py-0
@@ -79,15 +81,16 @@ const Header = () => {
           </div>
         </div>
       </nav>
-      <nav className='mobile-nav sm:hidden'>
+      <nav className='mobile-nav sm:hidden z-[10000] shadow-md '>
         <div
           className=' flex justify-between w-full bg-white min-h-[10vh] 
-        shadow items-center border-b-2 z-[101] px-6
+        shadow items-center border-b- z-[101111] px-6
          lg:px-[10rem] md:px-[3rem]'>
           <div className='text-3xl font-semibold'>Logo</div>
           <div className='nav-links  relative inline-block '>
-            <HiMenu size={30} onClick={() => setOpen("open")} />
+            {/* <HiMenu size={30} onClick={() => setOpen("open")} /> */}
             {/* <MobileNavItems /> */}
+            <HamburgerMenu />
             <div
               className={`list-none absolute z-[102] right-0 top-[100%]
       w-fit bg-white overflow-hidden transition-all 
