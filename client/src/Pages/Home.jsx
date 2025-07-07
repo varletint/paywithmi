@@ -36,11 +36,10 @@ export default function Home() {
       <nav className=' py-3  fixed left-1/2 right-1/2 top-0 '>
         {/* <Header /> */}
       </nav>
-
       <HeroSection />
-      {/* <Benefits />
+      <Benefits />
       <PriceSection />
-      <FooterSection /> */}
+      {/* <FooterSection /> */}
     </div>
   );
 }
@@ -166,16 +165,16 @@ const HeroSection = () => {
 const Benefits = () => {
   return (
     <section
-      className='mt-10 px-3
+      className='mt-10 px-3 max-w-[60rem] mx-auto mb-10
 
   '>
-      <div className=''>
-        <h1 className=' text-center font-semibold text-3xl '>
+      <div className=' grid'>
+        <h1 className=' text-center font-semibold sm:text-3xl text-2xl'>
           Benefits you get in single tool
         </h1>
-        <div className='flex gap-[1.5rem] mt-10 justify-center'>
+        <div className='md:grid-cols-4 sm:grid-cols-2 px-4 grid-cols-1 grid gap-[1.5rem] mt-10 items-center justify-center'>
           <div
-            className='bg-[#d5e0db33] w-[150px] h-[150px] items-center
+            className='bg-[#d5e0db33] col-span-1  h-[150px] items-center
             flex flex-col justify-center gap-3  rounded-xl 
           shadow-sm flex-shrink-0'>
             <div className=' items-center'>
@@ -184,7 +183,7 @@ const Benefits = () => {
             <p className='text-[#3e5a4e] font-semibold'>Payments</p>
           </div>
           <div
-            className='bg-[#d5e0db33] w-[150px] h-[150px] items-center
+            className='bg-[#d5e0db33] col-span-1 h-[150px] items-center
             flex flex-col justify-center gap-3  rounded-xl 
           shadow-sm flex-shrink-0'>
             <div className=' items-center'>
@@ -193,7 +192,7 @@ const Benefits = () => {
             <p className='text-[#3e5a4e] font-semibold'>Cashout</p>
           </div>
           <div
-            className='bg-[#d5e0db33] w-[150px] h-[150px] items-center
+            className='bg-[#d5e0db33] col-span-1 h-[150px] items-center
             flex flex-col justify-center gap-3  rounded-xl 
           shadow-sm flex-shrink-0'>
             <div className=' items-center'>
@@ -202,7 +201,7 @@ const Benefits = () => {
             <p className='text-[#3e5a4e] font-semibold'>Grow</p>
           </div>
           <div
-            className='bg-[#d5e0db34] w-[150px] h-[150px] items-center
+            className='bg-[#d5e0db34] col-span-1 h-[150px] items-center
             flex flex-col justify-center gap-3  rounded-xl 
           shadow-sm flex-shrink-0'>
             <div className=' items-center'>
