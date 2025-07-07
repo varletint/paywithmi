@@ -67,27 +67,25 @@ export default function MakePayment({ onClose }) {
 
   return (
     <div
-      className=' sm:max-w-[20rem]  max-w-[22rem] min-h-[90vh] 
+      className='  max-w-[30rem] min-h-[90vh] 
       m-auto flex  justify-center
       items-center flex-col
       '>
       <div
-        className=' bg-[#f9f9f9b0] w-full  py-12 px-4
-      rounded-[1rem] shadow-md'>
-        <div className=' flex  justify-between w-full px-3 items-center b'>
-          <h1 className=' font-semibold text-left w-[8rem] text-[#333]'>
-            Payment for {itemName}
-          </h1>
-          <h1
-            className='
-         font-bold text-sm text-[#35c93c]'>
-            <span className='  '>NGN </span>
-            {priceParam.price}
+        className=' bg-[#fff] w-full  py-12 px-4
+      sm:rounded-[1rem] shadow-md'>
+        <div className=' '>
+          <h1 className=' font-semibold text-xl text-center text-[#333]'>
+            A Card of
+            <span className=' font-bold text-[#28a02e] '>
+              {" "}
+              NGN {priceParam.price}
+            </span>
           </h1>
         </div>
         <form onSubmit={handelSubmit} className='mt-5 w-full '>
           <div
-            className='flex flex-col gap-5 max-w-  
+            className='flex flex-col mt-20 gap-5 max-w-  
         m-auto '>
             {/* <div className='input-div '>
                <label htmlFor='matricNo'>Matric No:</label> 
@@ -133,11 +131,12 @@ export default function MakePayment({ onClose }) {
               /> */}
             </div>
             <h4>
-              <div className='button-section flex justify-between gap-10'>
+              <div className='button-section flex justify-between gap-3'>
                 <span
                   onClick={onClose}
-                  className='w-[10rem]  border-[0.12rem] border-[#333] text-[#333] font-semibold
-            py-2 rounded-xl text-center cursor-pointer'>
+                  className='w-full  border-[0.12rem] border-[#333] 
+                  text-[#333] font-semibold
+            py-2.5 rounded-xl text-center cursor-pointer'>
                   Back
                 </span>
                 <button

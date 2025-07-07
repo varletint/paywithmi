@@ -127,9 +127,9 @@ const HeroSection = () => {
       lg:justify-between    bg-re-500 lg:w--[90rem] relative '>
         <div className=' flex items-center lg:relative absolute left-0 bottom-[5%] z-[100]'>
           <div
-            className='her-details px-4  py-4
+            className='her-details px-2  py-4
             lg:w-[30rem] sm:w-[100%] bgyellow-300 
-            flex-col sm:ml-6 md:ml-0 sm:bg-[#fff0]  bg-[#7270707c]/ backdrop-blur-[1px]
+            flex-col sm:ml-6 md:ml-0 sm:bg-[#fff0] w-[22rem]
         '>
             <div className=''>
               <h1
