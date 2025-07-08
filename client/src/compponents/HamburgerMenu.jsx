@@ -56,6 +56,9 @@ const HamburgerMenu = () => {
           <a href='#contact' className=''>
             Contact
           </a>
+          <a href='/dashboard' className=''>
+            Dashboard
+          </a>
         </nav>
       </motion.div>
 
