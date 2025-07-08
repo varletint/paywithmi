@@ -55,14 +55,14 @@ body {
 
 /* Input design */
 /* input, */
-select {
+/* select {
   background: #f7f6f6;
   border: 1px solid #b6b4b4;
   width: 100%;
   padding: 8px 20px;
 
   border-radius: 0.4rem;
-}
+} */
 
 label {
   font-weight: 600;

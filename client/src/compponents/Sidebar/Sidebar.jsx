@@ -5,7 +5,7 @@ import SearchInput from "./SearchInput";
 
 export default function Sidebar() {
   return (
-    <div>
+    <div className='z-10'>
       <div
         className=' overflow-y-scroll sticky top-4 
       lg:h-[calc(100vh-32px-49px)] md:h-[calc(100vh-32px-49px)]
