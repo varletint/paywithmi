@@ -1,0 +1,27 @@
+{
+  "name": "deptC payments",
+  "version": "1.0.0",
+  "description": "this a web app for the department of computer science in other ensure seemless payments in the department",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": " nodemon api/index",
+    "start": " node api/index",
+    "build": " npm install && npm install --prefix client && npm run build --prefix client"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gh-pages": "^6.3.0",
+    "https": "^1.0.0",
+    "react-router-dom": "^7.1.5",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.3.1",
+    "nodemon": "^3.1.0"
+  }
+}
